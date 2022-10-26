@@ -57,6 +57,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" aria-current="page" href="">Search</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" aria-current="page" href="">About Us</a>
+                        </li>
                         {% if user.is_authenticated %}
 
                         <div class="nav-item dropdown">
@@ -113,6 +116,8 @@
 
     {% block content %}
     {% endblock %}
+
+    {% include 'includes/footer.html' %}
 
     {% block postloadjs %}
     <!-- Messages script  -->

@@ -49,6 +49,15 @@ body {
     color: white;
 }
 
+#info-box {
+    transition: all .2s ease-in-out;
+}
+
+#info-box:hover {
+    transform: scale(1.10);
+    color: white;
+}
+
 /* For titles on cards on Index page */
 .card-title {
     margin: 10px 0px;
@@ -77,11 +86,26 @@ hr {
 }
 
 .logo-box {
-    height: 200px;
-    width: 200px;
+    height: 80%;
+    width: 80%;
+}
+
+p.lead {
+    padding-top: 20px;
 }
 
 .lead {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
+}
+
+.container-fluid {
+    width: 100%;
+    /* overflow-y: hidden; */
+}
+
+#footer-details {
+    min-height: 130px;
+    padding-top: 20px;
+    text-align: center;
 }
