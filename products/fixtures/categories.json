@@ -1,0 +1,73 @@
+[{
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "post_rock",
+            "friendly_name": "Post Rock"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "grunge",
+            "friendly_name": "Grunge"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "metal",
+            "friendly_name": "Metal"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "classic_rock",
+            "friendly_name": "Classic Rock"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "alternative_rock",
+            "friendly_name": "Alternative Rock"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.category",
+        "fields": {
+            "name": "folk_rock",
+            "friendly_name": "Folk Rock"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.category",
+        "fields": {
+            "name": "lp",
+            "friendly_name": "LP"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.category",
+        "fields": {
+            "name": "cd",
+            "friendly_name": "CD"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.category",
+        "fields": {
+            "name": "cassette",
+            "friendly_name": "Cassette"
+        }
+    }
+]
