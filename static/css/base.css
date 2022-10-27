@@ -76,9 +76,9 @@ i.fa-2x {
     align-items: center;
 }
 
-hr {
+/* hr {
     background-color: white;
-}
+} */
 
 .img-fluid {
     align-items: center;
@@ -100,7 +100,7 @@ p.lead {
 }
 
 .container-fluid {
-    width: 100%;
+    width: 90%;
     /* overflow-y: hidden; */
 }
 
@@ -109,3 +109,11 @@ p.lead {
     padding-top: 20px;
     text-align: center;
 }
+
+/* footer {
+    background-color: #e31f25;
+}
+
+.container-footer {
+    padding-left: 80px;
+} */
