@@ -18,7 +18,8 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    category = models.ManyToManyField(Category)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=100)
     artist = models.CharField(max_length=100, null=True, blank=True)
     sku = models.CharField(

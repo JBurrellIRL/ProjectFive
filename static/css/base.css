@@ -9,7 +9,6 @@ body {
     box-sizing: border-box;
     background-color: #fff;
 
-
 }
 
 .navbar {
@@ -29,6 +28,10 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #fff;
+}
+
+.container-fluid {
+    width: 90%;
 }
 
 
@@ -76,9 +79,35 @@ i.fa-2x {
     align-items: center;
 }
 
-/* hr {
-    background-color: white;
-} */
+/* MC Form  */
+
+.form-field-container {
+    padding-left: 1.8rem;
+}
+
+#mc_embed_signup {
+    background: #e31f25 !important;
+    border-radius: 10px;
+    clear: left;
+    font: 14px "Oswald", sans-serif;
+}
+
+#mc_embed_signup .mc-field-group label {
+    font-size: 20px;
+    color: #fff;
+}
+
+#mc_embed_signup .mc-field-group input {
+    text-indent: 1%;
+}
+
+#mc_embed_signup h2 {
+    padding-top: 30px;
+    font-size: 34px;
+    text-align: center;
+    color: #fff;
+}
+
 
 .img-fluid {
     align-items: center;
@@ -99,10 +128,7 @@ p.lead {
     font-weight: 400;
 }
 
-.container-fluid {
-    width: 90%;
-    /* overflow-y: hidden; */
-}
+
 
 #footer-details {
     min-height: 130px;
