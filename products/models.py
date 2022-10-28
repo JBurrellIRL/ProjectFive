@@ -22,6 +22,7 @@ class Product(models.Model):
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=100)
     artist = models.CharField(max_length=100, null=True, blank=True)
+    release_year = models.CharField(max_length=10, null=True, blank=True)
     sku = models.CharField(
         max_length=254, null=False, blank=False, unique=True)
     description = models.TextField()
