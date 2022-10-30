@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light static-top">
+    <div class="container-fluid">
+        <a class="navbar-brand text-light" href="{% url 'home' %}">JB's Record Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" role="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Store
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="all-products-link">
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}">All Products</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Alternative Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Classic Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Folk Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Grunge</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Metal</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Post Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="#">Progressive Rock</a></li>
+                    </ul>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="">About Us</a>
+                </li>
+                {% if user.is_authenticated %}
+
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" role="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span><i class="fas fa-user user-icon text-light"></i>{{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {% if request.user.is_superuser %}
+                        <li><a class="dropdown-item text-dark" href="#">Product Management</a></li>
+                        {% endif %}
+                        <li><a class="dropdown-item text-dark" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+                <li class="list-inline-item">
+                    <a class="nav-link" href="#">
+                        <div class="text-center">
+                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <p class="my-0">
+                            </p>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

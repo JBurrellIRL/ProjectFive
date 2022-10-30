@@ -11,6 +11,12 @@ body {
 
 }
 
+/* Fonts  */
+
+p {
+    font-family: "Roboto", sans-serif;
+}
+
 .navbar {
     background-color: #e31f25 !important;
 }
@@ -77,7 +83,6 @@ body {
 
 #info-box:hover {
     transform: scale(1.10);
-    color: white;
 }
 
 /* For titles on cards on Index page */
@@ -147,7 +152,13 @@ p.lead {
     font-weight: 400;
 }
 
+footer {
+    background-color: #e31f25;
+}
 
+.copyright-section {
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 #footer-details {
     min-height: 130px;

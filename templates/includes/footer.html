@@ -1,41 +1,66 @@
 {% load static %}
 
-<footer class="container-fluid mt-auto">
-    <div class="row py-lg-3 px-lg-3">
-        <!-- Footer navigation -->
-        <div class="col-12 col-md-6 p-4 text-center">
-            <ul class="nav flex-column divider px-4">
-                <li class="nav-item">
-                    <a href="" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Store</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="" class="nav-link">Privacy Policy</a>
-                </li>
-            </ul>
+<div class="mt-auto">
+    <footer class="text-center text-white">
+
+        <div class="container">
+            <section class="mt-5">
+
+                <div class="row text-center d-flex justify-content-center pt-5">
+
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="{% url 'home' %}" class="text-white">Home</a>
+                        </h6>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="{% url 'products' %}" class="text-white">Products</a>
+                        </h6>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="{% url 'terms' %}" class="text-white">Terms & Conditions</a>
+                        </h6>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="{% url 'privacy' %}" class="text-white">Privacy Policy</a>
+                        </h6>
+                    </div>
+
+                    <div class="col-md-2">
+                        <h6 class="text-uppercase font-weight-bold">
+                            <a href="{% url 'faqs' %}" class="text-white">FAQ's</a>
+                        </h6>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Media Icons  -->
+            <hr class="my-5" />
+            <section class="text-center mb-5">
+                <a href="" class="text-white me-4">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="text-white me-4">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </section>
         </div>
-        <div class="col-12 col-md-6 p-4 text-center">
-            <h3 class="text-dark">Check out my store on social media!</h3>
-            <!-- Section: Social media -->
-            <div class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-dark btn-floating m-1" href="" target="_blank" aria-label="" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
 
-                <!-- Twitter -->
-                <a class="btn btn-outline-dark btn-floating m-1" href="" target="_blank" aria-label="" role="button"><i
-                        class="fab fa-twitter"></i></a>
 
-                <!-- Instagram -->
-                <a class="btn btn-outline-dark btn-floating m-1" href="" target="_blank" aria-label="" role="button"><i
-                        class="fab fa-instagram"></i></a>
-
-            </div>
+        <div class="text-center p-3 copyright-section">
+            Site Created By:
+            <a class="text-white" href="https://jonathanburrell.com">Jonathan Burrell</a>
         </div>
-    </div>
-</footer>
+
+    </footer>
+
+</div>
