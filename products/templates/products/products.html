@@ -17,18 +17,18 @@
                     <div class="card-body">
                         <div class="image-container">
                             {% if product.image %}
-                            <a href="">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
                                     alt="{{ product.name }}">
                             </a>
                             {% else %}
-                            <a href="">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid"
                                     src="{{ MEDIA_URL }}il_fullxfull.2465788740_kimi.jpg" alt="{{ product.name }}">
                             </a>
                             {% endif %}
                         </div>
-                        <a href="#" class="post-link">
+                        <a href="{% url 'product_detail' product.id %}" class="post-link">
                             <h2 class="card-title">{{ product.name }}</h2>
                         </a>
                         <hr>
@@ -39,6 +39,7 @@
                         <h5 class="card-meta">Price: {{ product.price }}</h5>
                         <hr>
                         <p class="card-text card-meta">{{ product.excerpt }}</p>
+                        <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag">
 
                     </div>
                 </div>

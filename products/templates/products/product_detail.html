@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="masthead">
+    <div class="container product-detail">
+        <div class="row g-0">
+            <div class="d-sm-block col-lg-6">
+                <div class="image-container">
+                    {% if product.image %}
+                    <a href="">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    {% else %}
+                    <a href="">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}il_fullxfull.2465788740_kimi.jpg"
+                            alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Review title -->
+                <h1 class="product-title">{{ product.name }}</h1>
+                <hr>
+                <h5 class="card-meta">Artist: {{ product.artist }} </h5>
+                <!-- <h5 class="card-meta">Release Year: {{ product.release_year }}</h5> -->
+                <h5 class="card-meta">Category: {{ product.category.friendly_name }}</h5>
+                <hr />
+                <h5 class="card-meta">Price: {{ product.price }}</h5>
+                <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

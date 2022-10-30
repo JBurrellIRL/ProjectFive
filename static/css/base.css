@@ -166,10 +166,30 @@ footer {
     text-align: center;
 }
 
-/* footer {
-    background-color: #e31f25;
+/* Product Detail page  */
+
+.masthead {
+    margin-top: 10px;
 }
 
-.container-footer {
-    padding-left: 80px;
-} */
+.product-detail {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.product-title {
+    text-align: center;
+    margin-top: 35%;
+    margin-left: 5%;
+}
+
+
+/* Media queries  */
+
+@media screen and (max-width: 992px) {
+    h1.product-title {
+        margin-top: 5%;
+        margin-left: 0px;
+
+    }
+}
