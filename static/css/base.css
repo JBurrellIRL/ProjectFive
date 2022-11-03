@@ -112,7 +112,7 @@ i.fa-2x {
 #mc_embed_signup {
     background: #e31f25 !important;
     border-radius: 10px;
-
+    padding-bottom: 10px;
     font: 14px "Oswald", sans-serif;
 }
 
@@ -132,8 +132,19 @@ i.fa-2x {
     color: #fff;
 }
 
+input {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea {
+    width: 100%;
+}
+
 .about-me-h2 {
     text-align: center;
+    padding-top: 10px;
+    margin-bottom: 0px;
 }
 
 .img-fluid {
@@ -199,13 +210,4 @@ footer {
         margin-left: 0px;
 
     }
-}
-
-input {
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-}
-
-textarea {
-    width: 100%;
 }
