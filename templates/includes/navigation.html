@@ -17,13 +17,21 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="all-products-link">
                         <li><a class="dropdown-item text-dark" href="{% url 'products' %}">All Products</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Alternative Rock</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Classic Rock</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Folk Rock</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Grunge</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Metal</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Post Rock</a></li>
-                        <li><a class="dropdown-item text-dark" href="#">Progressive Rock</a></li>
+                        <li><a class="dropdown-item text-dark"
+                                href="{% url 'products' %}?category=alternative_rock">Alternative Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=classic_rock">Classic
+                                Rock</a></li>
+                        <li><a class="dropdown-item text-dark"
+                                href="{% url 'products' %}?category=electronic">Electronic</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=folk_rock">Folk
+                                Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=grunge">Grunge</a>
+                        </li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=metal">Metal</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=post_rock">Post
+                                Rock</a></li>
+                        <li><a class="dropdown-item text-dark"
+                                href="{% url 'products' %}?category=progressive_rock">Progressive Rock</a></li>
                     </ul>
                 </div>
                 <li class="nav-item">
