@@ -11,7 +11,7 @@ def all_products(request):
 
     products = Product.objects.all()
     categories = None
-
+    # To allow people to search for products by category
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')

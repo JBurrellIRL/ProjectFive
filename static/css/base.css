@@ -112,7 +112,7 @@ i.fa-2x {
 #mc_embed_signup {
     background: #e31f25 !important;
     border-radius: 10px;
-    clear: left;
+
     font: 14px "Oswald", sans-serif;
 }
 
@@ -203,6 +203,7 @@ footer {
 
 input {
     width: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 textarea {
