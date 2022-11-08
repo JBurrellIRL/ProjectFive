@@ -5,15 +5,15 @@
 {% block content %}
 
 <div class="container">
-    <div class="container">
-        <!--Django Model Form-->
-        <h2 class="my-4">Contact Us!</h2>
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{contact_form|crispy}}
-            <button class="btn btn-primary my-4" type="submit">Submit</button>
-        </form>
-    </div>
+
+    <!--Django Model Form-->
+    <h2 class="my-4">Contact Us!</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{contact_form|crispy}}
+        <button class="btn btn-primary my-4" type="submit">Submit</button>
+    </form>
+
 </div>
 
 
