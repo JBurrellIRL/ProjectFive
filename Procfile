@@ -1,0 +1,1 @@
+web: gunicorn jbs_record_store.wsgi:application

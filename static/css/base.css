@@ -186,6 +186,10 @@ footer {
 
 /* Product Detail page  */
 
+.input-group {
+    display: block;
+}
+
 .masthead {
     margin-top: 10px;
 }

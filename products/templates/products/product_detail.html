@@ -27,6 +27,7 @@
                 <h5 class="card-meta">Artist: {{ product.artist }} </h5>
                 <!-- <h5 class="card-meta">Release Year: {{ product.release_year }}</h5> -->
                 <h5 class="card-meta">Category: {{ product.category.friendly_name }}</h5>
+                <h5 class="card-meta">Condition: {{ product.condition }} </h5>
                 <hr />
                 <h5 class="card-meta">Price: {{ product.price }}</h5>
                 <form method="POST" action="{% url 'add_to_bag' product.id %}">
