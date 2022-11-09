@@ -51,12 +51,44 @@
                     </div>
                 </div>
             </div>
+            {% if forloop.counter|divisibleby:4 %}
+        </div>
+        <div class="row">
+            {% endif %}
 
             {% endfor %}
 
         </div>
 
     </div>
+
 </div>
+
+<div class="container">
+    <!-- After nine products on page, paginate with previous and next buttons -->
+    <div class="d-flex justify-content-center">
+
+        {% for product in products %}
+
+        {% endfor %}
+
+        <div>
+            <span>
+                {% if products.has_previous %}
+                <a href="?page={{ products.previous_page_number }}" class="btn btn-danger">Previous</a>
+                {% endif %}
+
+                <span class="current-page">
+                    Page {{ products.number }} of {{ products.paginator.num_pages }}
+                </span>
+
+                {% if products.has_next %}
+                <a href="?page={{ products.next_page_number }}" class="btn btn-danger">Next</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
