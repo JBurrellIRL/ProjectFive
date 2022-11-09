@@ -64,16 +64,24 @@
                     <a class="nav-link text-light" href="{% url 'account_login' %}">Login</a>
                 </li>
                 {% endif %}
-                <li class="list-inline-item">
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'view_bag' %}">
-                        <div class="text-center">
-                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                            <p class="my-0">
-                            </p>
-                        </div>
+                        <p class="my-0 text-white">
+                            <i class="fas fa-shopping-bag fa-lg"></i>
+                            {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                            $0.00
+                            {% endif %}
+                        </p>
                     </a>
-                </li>
 
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href="{% url 'view_bag' %}">
+
+                    </a>
+                </li> -->
             </ul>
         </div>
     </div>
