@@ -117,6 +117,8 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
     }
 
+# MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 WSGI_APPLICATION = 'jbs_record_store.wsgi.application'
 
 

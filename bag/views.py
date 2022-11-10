@@ -21,7 +21,7 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
     bag[item_id] = bag.get(item_id, quantity)
     messages.success(
-        request, f'Added {product.artist} - {product.name} to your bag')
+        request, f'Added {product.artist} - {product.name} to your bag!')
 
     request.session['bag'] = bag
 
@@ -36,7 +36,7 @@ def remove_from_bag(request, item_id):
     bag = request.session.get('bag', {})
     bag.pop(item_id)
     messages.success(
-        request, f'Removed {product.artist} - {product.name} from your bag')
+        request, f'Removed {product.artist} - {product.name} from your bag.')
 
     request.session['bag'] = bag
 

@@ -43,23 +43,41 @@
     </header>
 
     <!-- Messages, from Code Institute Blog Walkthrough -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-8 offset-md-2 text-center">
                 {% for message in messages %}
                 <div class="alert {{message.tags}} alert-dismissable fade show" id="msg" role="alert">
-
                     {{ message | safe }}
-
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-
                     </button>
-
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
+
+    <!-- {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %} -->
 
 
     {% block page_header %}
@@ -79,6 +97,9 @@
             alert.close();
         }, 2500);
     </script>
+    <!-- <script type="text/javascript">
+        $('.toast').toast('show');
+    </script> -->
     <!-- Font Awesome script  -->
     <script src="https://kit.fontawesome.com/08445b6b20.js" crossorigin="anonymous"></script>
     {% endblock %}
