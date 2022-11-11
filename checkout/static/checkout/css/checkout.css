@@ -1,0 +1,22 @@
+select,
+select option {
+    color: #000;
+}
+
+select:invalid,
+select option[value=''] {
+    color: #aab7c4 !important;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+.form-control {
+    margin-top: 5px;
+}
+
+.order-totals {
+    margin-top: 5px;
+}

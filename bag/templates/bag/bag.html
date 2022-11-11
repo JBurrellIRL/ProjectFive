@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block content %}
 
 <div class="container">
@@ -15,7 +16,9 @@
             <div class="card">
                 <div class="card-body mx-auto">
                     {% if item.product.image %}
-                    <img class="card-img-top" src="{{ MEDIA_URL }}{{ item.product.image.url }}">
+                    <img class="card-img-top" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     {% endif %}
                     <h5 class="card-text text-center">{{ item.product.name|truncatechars:20 }}</h5>
                     <h5 class="card-text text-center">{{ item.product.artist }}</h5>
@@ -53,7 +56,7 @@
             <h2 class="card-text my-2">Total: €{{ grand_total|floatformat:2 }}</h2>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-sm-12">
-            <a href="" class="btn btn-success btn-lg mt-2 mb-4 mx-auto" role="button">Checkout</a>
+            <a href="{% url 'checkout' %}" class="btn btn-success btn-lg mt-2 mb-4 mx-auto" role="button">Checkout</a>
         </div>
     </div>
 </div>
