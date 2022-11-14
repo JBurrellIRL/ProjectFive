@@ -10,7 +10,7 @@ from django.views import generic
 def all_products(request):
     """A view to display all uploaded products"""
 
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('?')
     categories = None
     paginaton = Paginator(products, 8)
     page = request.GET.get('page')
