@@ -215,3 +215,15 @@ footer {
 
     }
 }
+
+/* Login page test  */
+
+
+.login #id_remember {
+    width: 20px;
+    display: inline;
+}
+
+.authentication-username {
+    text-transform: lowercase;
+}
