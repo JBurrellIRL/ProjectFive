@@ -65,22 +65,19 @@
 </div>
 
 <div class="container">
-    <!-- After nine products on page, paginate with previous and next buttons -->
     <div class="d-flex justify-content-center">
-
-        {% for product in products %}
-
-        {% endfor %}
-
         <div>
             <span>
                 {% if products.has_previous %}
                 <a href="?page={{ products.previous_page_number }}" class="btn btn-danger">Previous</a>
                 {% endif %}
 
+
+                {% if products.has_previous or products.has_next %}
                 <span class="current-page">
                     Page {{ products.number }} of {{ products.paginator.num_pages }}
                 </span>
+                {% endif %}
 
                 {% if products.has_next %}
                 <a href="?page={{ products.next_page_number }}" class="btn btn-danger">Next</a>
@@ -89,6 +86,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 {% endblock %}
