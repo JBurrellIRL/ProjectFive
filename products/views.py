@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Product, Category
 
@@ -10,7 +11,7 @@ from django.views import generic
 def all_products(request):
     """A view to display all uploaded products"""
 
-    products = Product.objects.all().order_by('?')
+    products = Product.objects.filter(status=1).order_by('?')
     categories = None
     paginaton = Paginator(products, 8)
     page = request.GET.get('page')

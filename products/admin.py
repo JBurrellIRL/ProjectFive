@@ -10,7 +10,7 @@ class ProductAdmin(admin.ModelAdmin):
         'artist',
         'category',
         'price',
-        'condition',
+        'status',
     )
 
     ordering = ('artist',)

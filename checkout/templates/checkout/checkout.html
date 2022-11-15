@@ -51,8 +51,8 @@
             <div class="row text-black text-right order-totals">
                 <div class="col-7 offset-2">
                     <p class="my-0">Order Total:</p>
-                    <p class="my-0">Delivery:</p>
-                    <p class="my-0">Grand Total:</p>
+                    <p class="my-0">Shipping:</p>
+                    <p class="my-0">Total to be charged:</p>
                 </div>
                 <div class="col-3">
                     <p class="my-0">${{ total | floatformat:2 }}</p>
@@ -81,7 +81,7 @@
                     {{ order_form.country | as_crispy_field }}
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
-                        <label class="form-check-label" for="id-save-info">Save this delivery information to my
+                        <label class="form-check-label" for="id-save-info">Save this shipping information to my
                             profile</label>
                         <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info"
                             checked>
@@ -110,7 +110,7 @@
                         </span>
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
+                    <button id="submit-button" class="btn btn-dark btn-signup rounded-0">
                         <span class="font-weight-bold">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
