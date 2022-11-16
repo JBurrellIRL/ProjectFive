@@ -27,11 +27,13 @@ class Product(models.Model):
     release_year = models.CharField(max_length=10, null=True, blank=True)
     sku = models.CharField(
         max_length=254, null=False, blank=False, unique=True)
+    slug = models.SlugField(max_length=100, null=True, unique=True)
     description = models.TextField()
     condition = models.TextField()
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    stock = models.PositiveIntegerField(default=10)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 

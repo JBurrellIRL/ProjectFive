@@ -37,13 +37,26 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-def product_detail(request, product_id):
-    """A view to display the product detail page for each product"""
+# def product_detail(request, product_id):
+#     """A view to display the product detail page for each product"""
 
-    product = get_object_or_404(Product, pk=product_id)
+#     product = get_object_or_404(Product, pk=product_id)
+
+#     context = {
+#         'product': product,
+#     }
+
+#     return render(request, 'products/product_detail.html', context)
+
+def product_detail(request, slug):
+    """ 
+    This function returns an individual product by its slug 
+    """
+
+    product = get_object_or_404(Product.objects.filter(slug=slug))
 
     context = {
         'product': product,
     }
 
-    return render(request, 'products/product_detail.html', context)
+    return render(request, 'products/product_detail.html', context=context)

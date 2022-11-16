@@ -70,6 +70,10 @@ p {
     color: #6B7177;
 }
 
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
 .btn-danger {
     background-color: #e31f25 !important;
 }
