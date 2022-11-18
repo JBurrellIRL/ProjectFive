@@ -13,25 +13,39 @@
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" role="button" id="dropdownMenuButton1"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Store
+                        By Category
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="all-products-link">
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}">All Products</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=lp">LP</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=compact_disc">Compact
+                                Disc</a></li>
+                        <li><a class="dropdown-item text-dark"
+                                href="{% url 'products' %}?category=cassette">Cassette</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" role="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        By Genre
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="all-products-link">
                         <li><a class="dropdown-item text-dark" href="{% url 'products' %}">All Products</a></li>
                         <li><a class="dropdown-item text-dark"
-                                href="{% url 'products' %}?category=alternative_rock">Alternative Rock</a></li>
-                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=classic_rock">Classic
+                                href="{% url 'products' %}?genre=alternative_rock">Alternative Rock</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?genre=classic_rock">Classic
                                 Rock</a></li>
                         <li><a class="dropdown-item text-dark"
-                                href="{% url 'products' %}?category=electronic">Electronic</a></li>
-                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=folk_rock">Folk
+                                href="{% url 'products' %}?genre=electronic">Electronic</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?genre=folk_rock">Folk
                                 Rock</a></li>
-                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=grunge">Grunge</a>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?genre=grunge">Grunge</a>
                         </li>
-                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=metal">Metal</a></li>
-                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?category=post_rock">Post
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?genre=metal">Metal</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'products' %}?genre=post_rock">Post
                                 Rock</a></li>
                         <li><a class="dropdown-item text-dark"
-                                href="{% url 'products' %}?category=progressive_rock">Progressive Rock</a></li>
+                                href="{% url 'products' %}?genre=progressive_rock">Progressive Rock</a></li>
                     </ul>
                 </div>
                 <li class="nav-item">

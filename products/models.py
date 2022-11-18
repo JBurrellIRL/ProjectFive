@@ -10,7 +10,23 @@ class Category(models.Model):
 
     class Meta:
         """Correct spelling in admin panel"""
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'Formats'
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
+class Genre(models.Model):
+
+    name = models.CharField(max_length=254)
+    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+    class Meta:
+        """Correct spelling in admin panel"""
+        verbose_name_plural = 'Genres'
 
     def __str__(self):
         return self.name
@@ -22,6 +38,9 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
+    name = models.CharField(max_length=100)
+    genre = models.ForeignKey(
+        'Genre', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=100)
     artist = models.CharField(max_length=100, null=True, blank=True)
     release_year = models.CharField(max_length=10, null=True, blank=True)

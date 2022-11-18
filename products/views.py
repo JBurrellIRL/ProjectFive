@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Product, Category
+from .models import Product, Category, Genre
 
 # Create your views here.
 
@@ -12,6 +12,7 @@ def all_products(request):
     """A view to display all uploaded products"""
 
     products = Product.objects.filter(status=1).order_by('?')
+    genres = None
     categories = None
     paginaton = Paginator(products, 8)
     page = request.GET.get('page')
@@ -22,12 +23,17 @@ def all_products(request):
         products = paginaton.page(1)
     except EmptyPage:
         products = paginaton.page(paginaton.num_pages)
-    
+
     if request.GET:
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
+        if "category" in request.GET:
+            categories = request.GET["category"].split(",")
             products = Product.objects.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
+
+        if "genre" in request.GET:
+            genres = request.GET["genre"].split(",")
+            products = Product.objects.filter(genre__name__in=genres)
+            genres = Genre.objects.filter(name__in=genres)
 
     context = {
         'products': products,
@@ -37,20 +43,9 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-# def product_detail(request, product_id):
-#     """A view to display the product detail page for each product"""
-
-#     product = get_object_or_404(Product, pk=product_id)
-
-#     context = {
-#         'product': product,
-#     }
-
-#     return render(request, 'products/product_detail.html', context)
-
 def product_detail(request, slug):
-    """ 
-    This function returns an individual product by its slug 
+    """
+    This function returns an individual product by its slug
     """
 
     product = get_object_or_404(Product.objects.filter(slug=slug))
