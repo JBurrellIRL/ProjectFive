@@ -1,58 +1,63 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block content %}
 
 <div class="container">
+    <h2 class="text-center">Customer Reviews</h2>
+    <div class="container">
+        {% for review in reviews_list %}
+        <div class="item mb-5">
+            <div class="row g-3 g-xl-0">
+                <div class="col-2 col-xl-3">
+                    {% if review.image %}
+                    <img class="review-image card-img-top img-fluid mt-3" src="{{ review.image.url }}"
+                        alt="{{ review.name }} Review Image">
+                    {% else %}
+                    <img class="review-image card-img-top img-fluid mt-3" src="{{ MEDIA_URL }}noimage.png"
+                        alt="{{ review.name }} Review Image">
+                    {% endif %}
+                </div>
+                <div class="col">
+                    <h3 class="title mb-1">{{ review.review_title }}</h3>
+                    <div class="meta mb-1"><span class="date">{{ review.date | date:"D d M Y"}}</span></div>
+                    <div class="meta mb-1"><span class="review">
+                            {% if review.rating == 5 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif review.rating == 4 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif review.rating == 3 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif review.rating == 2 %}
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            {% elif review.rating == 1 %}
+                            <i class="fas fa-star"></i>
+                            {% endif %}
+                        </span></div>
+                    {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+                    <a class="btn btn-danger mb-3" href="update_review/{{review.id}}"
+                        aria-label="Go to edit review {{review.id}} page">Edit</a>
+                    <button type="button" class="btn btn-danger mb-3" data-bs-toggle="modal"
+                        data-bs-target="#delete-review-{{review.id}}" aria-label="Delete">Delete</button>
+                    {% endif %}
+                    <div class="intro">{{ review.body }}</div>
 
-    <h2>Customer Reviews</h2>
-    <hr>
-    {% for review in reviews_list %}
-    <div class="review-box">
-        <p><i class="fas fa-user fa-lg interactive-color"></i> {{ review.name  | slice:":10" }}</p>
-        <p>"{{ review.review_title}}"</p>
-        <span>
-            {% if review.rating == 5 %}
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            {% elif review.rating == 4 %}
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star text-dark"></i>
-            {% else%}
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star text-dark"></i>
-            <i class="fas fa-star text-dark"></i>
-            {% endif %}
-        </span>
-        <p class="mt-2"><i class="fa fa-clock interactive-color"></i> Reviewed on: {{ review.date }}</p>
-        <div class="review-text">
-            <p class="mt-3">{{ review.body }}</p>
-        </div>
-        <div class="review-img">
-            {% if review.image %}
-            <img class="review-image card-img-top img-fluid mt-3" src="#" alt="{{ review.name }} Review Image">
-            {% else %}
-            <img class="review-image card-img-top img-fluid mt-3" src="{{ MEDIA_URL }}noimage.png"
-                alt="{{ review.name }} Review Image">
-            {% endif %}
-        </div>
-        {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
-        <div class="text-center mt-3">
-            <a href="" aria-label="Go to edit review page" class="btn-edit btn-sm btn-secondary mb-3">Edit</a>
-            <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
-                data-bs-target="#delete-review-{{review.id}}" aria-label="Delete">Delete</button>
+                </div>
+                <!--//col-->
+            </div>
         </div>
         <!-- Delete review bootstrap modal-->
-        <div class="modal fade" id="delete-review" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="delete-review-{{review.id}}" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -64,17 +69,91 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                             aria-label="Close Modal">Close</button>
-                        <a href="" aria-label="Delete review" class="btn btn-danger">Delete</a>
+                        <a href="delete_review/{{review.id}}" aria-label="Delete review {{review.id}}"
+                            class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endif %}
     </div>
-    <hr>
     {% endfor %}
-
 </div>
+</div>
+<!-- <div class="container">
+
+    <div class="col-12 col-lg-6">
+        <h2 class="sub-title text-center">Customers Reviews</h2>
+        <hr>
+        {% for review in reviews_list %}
+        <div class="review-box">
+            <p><i class="fas fa-user fa-lg interactive-color"></i> {{ review.name  | slice:":10" }}</p>
+            <p>"{{ review.review_title}}"</p>
+            <span>
+                {% if review.service_rating == 5 %}
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                {% elif review.service_rating == 4 %}
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star text-dark"></i>
+                {% else%}
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star text-dark"></i>
+                <i class="fas fa-star text-dark"></i>
+                {% endif %}
+            </span>
+            <p class="mt-2"><i class="fa fa-clock interactive-color"></i> Reviewed on:
+                {{ review.date | date:"D d M Y" }}</p>
+            <div class="review-text">
+                <p class="mt-3">{{ review.body }}</p>
+            </div>
+            <div class="review-img">
+                {% if review.image %}
+                <img class="review-image card-img-top img-fluid mt-3" src="{{ review.image.url }}"
+                    alt="{{ review.name }} Review Image">
+                {% else %}
+                <img class="review-image card-img-top img-fluid mt-3" src="{{ MEDIA_URL }}noimage.png"
+                    alt="{{ review.name }} Review Image">
+                {% endif %}
+            </div>
+            {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+            <div class="text-center mt-3">
+                <a href="update_review/{{review.id}}" aria-label="Go to edit review {{review.id}} page"
+                    class="btn-edit btn-sm btn-secondary mb-3">Edit</a>
+                <button type="button" class="btn-sm btn-danger mb-3" data-bs-toggle="modal"
+                    data-bs-target="#delete-review-{{review.id}}" aria-label="Delete">Delete</button>
+            </div>
+            <div class="modal fade" id="delete-review-{{review.id}}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Delete Review</h5>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete your review?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                aria-label="Close Modal">Close</button>
+                            <a href="delete_review/{{review.id}}" aria-label="Delete review {{review.id}}"
+                                class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+</div> -->
 
 
-{% endblock%}
+{% endblock %}

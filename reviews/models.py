@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 RATE_CHOICES = [
     (1, '1 - Awful'),
@@ -18,7 +19,7 @@ class Reviews(models.Model):
         verbose_name_plural = "Reviews"
 
     review_title = models.CharField(max_length=100)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, null=True)
     image = models.ImageField(
                               upload_to="reviews_images/",
                               null=True,
@@ -34,4 +35,3 @@ class Reviews(models.Model):
 
     def get_absolute_url(self):
         return reverse("reviews")
-
