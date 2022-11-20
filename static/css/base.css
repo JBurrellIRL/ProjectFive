@@ -111,6 +111,10 @@ i.fa-2x {
     align-items: center;
 }
 
+.fa-cassette-tape {
+    color: #6B7177 !important;
+}
+
 /* MC Form  */
 
 .form-field-container {

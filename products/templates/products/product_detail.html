@@ -25,10 +25,21 @@
                 <h1 class="product-title">{{ product.name }}</h1>
                 <hr>
                 <h5 class="card-meta">Artist: {{ product.artist }} </h5>
-                <!-- <h5 class="card-meta">Release Year: {{ product.release_year }}</h5> -->
+
+                {% if product.category.friendly_name == 'LP' %}
                 <h5 class="card-meta"><i class="fa fa-record-vinyl" aria-hidden="true"></i>
                     {{ product.category.friendly_name }}</h5>
+
+                {% elif product.category.friendly_name == 'Compact Disc' %}
+                <h5 class="card-meta"><i class="fa fa-compact-disc"></i>
+                    {{ product.category.friendly_name }}</h5>
+
+                {% elif product.category.friendly_name == 'Cassette' %}
+                <h5 class="card-meta"><i class="fa fa-camera-retro"></i>
+                    {{ product.category.friendly_name }}</h5>
+                {% endif %}
                 <h5 class="card-meta">Genre: {{ product.genre.friendly_name }}</h5>
+
                 <h5 class="card-meta">Condition: {{ product.condition }} </h5>
                 {% if product.rating %}
                 <h5 class="text-muted"><i class="fas fa-star"></i> {{ product.rating }} / 5</h5>
