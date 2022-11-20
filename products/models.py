@@ -46,8 +46,12 @@ class Product(models.Model):
     release_year = models.CharField(max_length=10, null=True, blank=True)
     sku = models.CharField(
         max_length=254, null=False, blank=False, unique=True)
-    slug = models.SlugField(max_length=100, null=True, unique=True)
     description = models.TextField()
+    rating = models.DecimalField(
+                                 max_digits=5,
+                                 decimal_places=1,
+                                 null=True,
+                                 blank=True)
     condition = models.TextField()
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)

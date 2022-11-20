@@ -41,7 +41,7 @@ class UpdateReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Reviews
     form_class = ReviewsForm
     template_name = "reviews/update_review.html"
-    success_message = "The review was successfully updated"
+    success_message = "Your review was successfully updated."
 
 
 @login_required
@@ -51,5 +51,5 @@ def DeleteReview(request, review_id):
     """
     reviews = get_object_or_404(Reviews, id=review_id)
     reviews.delete()
-    messages.success(request, "The review was deleted successfully")
+    messages.success(request, "Your review was deleted successfully")
     return redirect("reviews")

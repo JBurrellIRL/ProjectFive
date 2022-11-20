@@ -17,7 +17,7 @@
                     <div class="card-body">
                         <div class="image-container">
                             {% if product.image %}
-                            <a href="{% url 'product_detail' product.slug %}">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}"
                                     alt="{{ product.name }}">
                             </a>
@@ -28,7 +28,7 @@
                             </a>
                             {% endif %}
                         </div>
-                        <a href="{% url 'product_detail' product.slug %}" class="post-link">
+                        <a href="{% url 'product_detail' product.id %}" class="post-link">
                             <h2 class="card-title">{{ product.name }}</h2>
                         </a>
                         <hr>

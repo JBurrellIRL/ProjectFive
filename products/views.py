@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Product, Category, Genre
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -43,15 +44,25 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-def product_detail(request, slug):
-    """
-    This function returns an individual product by its slug
-    """
+def product_detail(request, product_id):
+    """ A view to show individual product details """
 
-    product = get_object_or_404(Product.objects.filter(slug=slug))
+    product = get_object_or_404(Product, pk=product_id)
 
     context = {
         'product': product,
     }
 
-    return render(request, 'products/product_detail.html', context=context)
+    return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    
+    form = ProductForm()
+
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
