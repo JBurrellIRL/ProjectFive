@@ -12,7 +12,8 @@ class ProductForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         genres = Genre.objects.all()
-        friendly_cat_names = [(c.id, c.get_friendly_name()) for c in categories]
+        friendly_cat_names = [
+            (c.id, c.get_friendly_name()) for c in categories]
         friendly_genre_names = [(g.id, g.get_friendly_name()) for g in genres]
 
         self.fields['category'].choices = friendly_cat_names

@@ -20,7 +20,7 @@ def all_reviews(request):
     return render(
         request,
         "reviews/reviews.html", {"reviews_list": reviews_list})
-        
+
 
 class AddReview(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
@@ -30,7 +30,8 @@ class AddReview(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Reviews
     form_class = ReviewsForm
     template_name = "reviews/add_review.html"
-    success_message = "Your review was successfully added, and is awaiting approval. Thanks!"
+    success_message = "Your review was successfully added, \
+        and is awaiting approval. Thanks!"
 
     def form_valid(self, form):
         form.instance.name = self.request.user
@@ -51,5 +52,5 @@ def DeleteReview(request, review_id):
     """
     reviews = get_object_or_404(Reviews, id=review_id)
     reviews.delete()
-    messages.success(request, "Your review was deleted successfully")
+    messages.success(request, "Your review was deleted successfully.")
     return redirect("reviews")

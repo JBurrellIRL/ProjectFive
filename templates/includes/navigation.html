@@ -63,7 +63,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         {% if request.user.is_superuser %}
-                        <li><a class="dropdown-item text-dark" href="#">Product Management</a></li>
+                        <li><a class="dropdown-item text-dark" href="{% url 'add_product' %}">Add New Product</a>
+                        </li>
                         {% endif %}
                         <li><a class="dropdown-item text-dark" href="{% url 'profile' %}">My Profile</a></li>
                         <li><a class="dropdown-item text-dark" href="{% url 'account_logout' %}">Logout</a>
