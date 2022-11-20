@@ -2,18 +2,17 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reviews/css/review.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <div class="container">
     <div class="row p-3">
         <div class="col-12 text-center">
-            {% if reviews %}
-            <h1 class="sub-title mt-70">Edit Review As:</h1>
-            <p><i class="fas fa-user fa-lg interactive-color"></i> {{ user.username  | slice:":10" }}</p>
-            {% else %}
             <h1 class="sub-title mt-70">Add Review As:</h1>
             <p><i class="fas fa-user fa-lg interactive-color"></i> {{ user.username  | slice:":10" }}</p>
-            {% endif %}
         </div>
     </div>
 </div>

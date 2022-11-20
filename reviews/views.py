@@ -30,7 +30,7 @@ class AddReview(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Reviews
     form_class = ReviewsForm
     template_name = "reviews/add_review.html"
-    success_message = "The review was successfully added, and is awaiting approval. Thanks!"
+    success_message = "Your review was successfully added, and is awaiting approval. Thanks!"
 
     def form_valid(self, form):
         form.instance.name = self.request.user
@@ -42,6 +42,7 @@ class UpdateReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     form_class = ReviewsForm
     template_name = "reviews/update_review.html"
     success_message = "The review was successfully updated"
+
 
 @login_required
 def DeleteReview(request, review_id):
