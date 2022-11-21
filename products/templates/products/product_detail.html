@@ -48,13 +48,15 @@
                 {% endif %}
                 {% if request.user.is_superuser %}
                 <hr>
-                <div class="text-center"><a class="btn btn-success" href=" {% url 'edit_product' product.id %}">Edit</a>
+                <h5 class="text-muted">Store Administration</h5>
+                <div class="text-center"><a class="btn btn-success" href=" {% url 'edit_product' product.id %}">Edit
+                        Product</a>
                     <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                        data-bs-target="#delete-product{{ product.id }}" aria-label="Delete">Delete</button>
+                        data-bs-target="#delete-product{{ product.id }}" aria-label="Delete">Delete Product</button>
                 </div>
                 {% endif %}
                 <hr />
-                <h5 class="card-meta">Price: {{ product.price }}</h5>
+                <h5 class="card-meta">Price: €{{ product.price }}</h5>
                 <form method="POST" action="{% url 'add_to_bag' product.id %}">
                     {% csrf_token %}
                     <div class="input-group card-text text-center">
