@@ -14,7 +14,7 @@ from django.views import generic
 def all_products(request):
     """A view to display all uploaded products"""
 
-    products = Product.objects.filter(status=1).order_by('?')
+    products = Product.productmanager.all()
     genres = None
     categories = None
     paginaton = Paginator(products, 8)
@@ -30,12 +30,12 @@ def all_products(request):
     if request.GET:
         if "category" in request.GET:
             categories = request.GET["category"].split(",")
-            products = Product.objects.filter(category__name__in=categories)
+            products = Product.productmanager.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if "genre" in request.GET:
             genres = request.GET["genre"].split(",")
-            products = Product.objects.filter(genre__name__in=genres)
+            products = Product.productmanager.filter(genre__name__in=genres)
             genres = Genre.objects.filter(name__in=genres)
 
     context = {
@@ -64,7 +64,8 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store administrators can do that.')
+        messages.error(
+            request, 'Sorry, only store administrators can do that.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -92,7 +93,8 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store administrators can do that.')
+        messages.error(
+            request, 'Sorry, only store administrators can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -108,7 +110,8 @@ def edit_product(request, product_id):
                             'Please ensure the form is valid.'))
     else:
         form = ProductForm(instance=product)
-        messages.info(request, f'You are editing {product.name} - {product.artist}')
+        messages.info(
+            request, f'You are editing {product.name} - {product.artist}')
 
     template = 'products/edit_product.html'
     context = {

@@ -1,7 +1,5 @@
 from django.db import models
 
-STATUS = ((0, "Draft"), (1, "Published"))
-
 
 class Category(models.Model):
 
@@ -36,6 +34,17 @@ class Genre(models.Model):
 
 
 class Product(models.Model):
+    """Model for store products"""
+
+    status = ((0, "Draft"), (1, "Published"))
+    
+    """Custom class to overwrite default objects manager, to
+    filter blog posts to only show published products"""
+
+    class ProductManager(models.Manager):
+        def get_queryset(self):
+            return super().get_queryset().filter(status=1)
+
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=100)
@@ -54,11 +63,13 @@ class Product(models.Model):
                                  blank=True)
     condition = models.TextField()
     excerpt = models.TextField(blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=status, default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.PositiveIntegerField(default=10)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    objects = models.Manager()
+    productmanager = ProductManager()
 
     def __str__(self):
         return self.name

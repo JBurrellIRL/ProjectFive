@@ -12,13 +12,13 @@
     <hr>
     <h3 class="sub-title interactive-color">Leave us a review!</h3>
     <hr>
-    <p class="p-1 text-justify">
-        This is your chance to let us know what you think about the service you received on this site. Your feedback
-        will help us to improve the quality of the services. Thank you! </p>
+    <p class="text-justify">This is your chance to let us know what you think about the service you received on this
+        site. Your feedback
+        will help us to improve the quality of our services. Thank you! </p>
     {% if user.is_authenticated %}
     <p><a class="btn btn-lg btn-warning my-4" href="{% url 'add_review' %}" role="button">Leave A Review</a></p>
     {% else %}
-    <p>Please log in to leave a review. Thank you!</p>
+    <p>Please log in to leave a review.</p>
     {% endif %}
     <!-- List of existing reviews  -->
     {% for review in reviews_list %}

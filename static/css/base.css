@@ -254,19 +254,20 @@ footer {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
+}
 
-    /* Login page test  */
+/* Login page  */
 
 
-    .login #id_remember {
-        width: 20px;
-        display: inline;
-    }
+.login #id_remember {
+    width: 20px;
+    display: inline;
+}
 
-    .authentication-username {
-        text-transform: lowercase;
-    }
+.authentication-username {
+    text-transform: lowercase;
+}
 
-    .fa-star {
-        color: #f5ce42 !important;
-    }
+.fa-star {
+    color: #f5ce42 !important;
+}

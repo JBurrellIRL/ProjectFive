@@ -18,7 +18,7 @@
 </div>
 
 <div class="container">
-    <div class="col-md-6 p-2">
+    <div class="p-2">
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {% for field in form %}
@@ -29,7 +29,7 @@
             {% endif %}
             {% endfor %}
             <div class="text-center">
-                <button class="btn btn-secondary right mb-4" type="submit" value="Save" aria-label="Submit Review">
+                <button class="btn btn-danger right mb-4" type="submit" value="Save" aria-label="Submit Review">
                     Submit
                 </button>
             </div>
