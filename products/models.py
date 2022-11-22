@@ -37,7 +37,7 @@ class Product(models.Model):
     """Model for store products"""
 
     status = ((0, "Draft"), (1, "Published"))
-    
+
     """Custom class to overwrite default objects manager, to
     filter blog posts to only show published products"""
 

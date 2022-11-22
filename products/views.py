@@ -30,12 +30,14 @@ def all_products(request):
     if request.GET:
         if "category" in request.GET:
             categories = request.GET["category"].split(",")
-            products = Product.productmanager.filter(category__name__in=categories)
+            products = Product.productmanager.filter(
+                category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
         if "genre" in request.GET:
             genres = request.GET["genre"].split(",")
-            products = Product.productmanager.filter(genre__name__in=genres)
+            products = Product.productmanager.filter(
+                genre__name__in=genres)
             genres = Genre.objects.filter(name__in=genres)
 
     context = {
