@@ -12,8 +12,7 @@ from django.views import generic
 
 
 def all_products(request):
-    """A view to display all uploaded products"""
-
+    """View to display all published products"""
     products = Product.productmanager.all()
     genres = None
     categories = None
@@ -50,7 +49,6 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
     product = get_object_or_404(Product, pk=product_id)
     category = Category.objects.all()
 
@@ -64,7 +62,7 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """ View to add a product to the store """
     if not request.user.is_superuser:
         messages.error(
             request, 'Sorry, only store administrators can do that.')
@@ -93,7 +91,7 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """ View to edit a product in the store """
     if not request.user.is_superuser:
         messages.error(
             request, 'Sorry, only store administrators can do that.')

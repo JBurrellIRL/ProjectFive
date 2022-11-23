@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-
+    """Model for 'format' category '"""
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -18,7 +18,7 @@ class Category(models.Model):
 
 
 class Genre(models.Model):
-
+    """Model for 'genre' category '"""
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -45,9 +45,12 @@ class Product(models.Model):
         def get_queryset(self):
             return super().get_queryset().filter(status=1)
 
+    class Meta:
+        """Random order on each page load"""
+        ordering = ['?']
+
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
-    name = models.CharField(max_length=100)
     genre = models.ForeignKey(
         'Genre', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=100)
@@ -57,7 +60,7 @@ class Product(models.Model):
         max_length=254, null=False, blank=False, unique=True)
     description = models.TextField()
     rating = models.DecimalField(
-                                 max_digits=5,
+                                 max_digits=4,
                                  decimal_places=1,
                                  null=True,
                                  blank=True)

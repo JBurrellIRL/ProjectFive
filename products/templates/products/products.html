@@ -8,7 +8,7 @@
 
 
 <div class="container">
-    <h2 class="review-heading mx-4 my-0 text-center">Products</h2>
+    <h2 class="products-heading mx-4 text-center">Products</h2>
     <div class="col-12 mt-3 left">
         <div class="row">
             {% for product in products %}
@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                            aria-label="Close Modal">Close</button>
+                                            aria-label="Close Modal">Cancel</button>
                                         <a href="{% url 'delete_product' product.id %}"
                                             aria-label="Delete {{ product.name }}" class="btn btn-danger">Delete</a>
                                     </div>

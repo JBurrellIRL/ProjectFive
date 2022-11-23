@@ -15,6 +15,19 @@ body {
 
 p {
     font-family: "Roboto", sans-serif;
+    text-align: justify;
+}
+
+h2.products-heading {
+    margin-top: 10px;
+}
+
+.text-light {
+    color: #fff !important;
+}
+
+a.btn-success {
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
@@ -24,6 +37,10 @@ p {
 .nav-item {
     font-family: "Oswald", sans-serif;
     font-weight: 500;
+}
+
+.navbar-toggler {
+    border-color: #e6e2da !important;
 }
 
 .jumbotron {
@@ -128,6 +145,11 @@ i.fa-2x {
     font: 14px "Oswald", sans-serif;
 }
 
+#mc_embed_signup .button {
+    background-color: #fff;
+    color: #212529;
+}
+
 #mc_embed_signup .mc-field-group label {
     font-size: 20px;
     color: #fff;
@@ -143,6 +165,8 @@ i.fa-2x {
     text-align: center;
     color: #fff;
 }
+
+
 
 input {
     /* width: 100%; */
