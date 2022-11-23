@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, OrderLineItem, OrderNotes
+from django_summernote.admin import SummernoteModelAdmin
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
@@ -27,4 +28,14 @@ class OrderAdmin(admin.ModelAdmin):
     ordering = ('-date',)
 
 
+class OrderNotesAdmin(SummernoteModelAdmin):
+    summernote_fields = ('order_notes')
+    list_display = (
+        'related_order',
+        'date',
+        'order_fulfilled',
+    )
+
+
 admin.site.register(Order, OrderAdmin)
+admin.site.register(OrderNotes, OrderNotesAdmin)

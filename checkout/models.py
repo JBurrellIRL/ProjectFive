@@ -88,3 +88,25 @@ class OrderLineItem(models.Model):
 
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
+
+
+class OrderNotes(models.Model):
+    """
+    Model to store internal notes for customer messages
+    """
+    FULFILLED = [(False, 'No'), (True, 'Yes')]
+    
+    class Meta:
+        verbose_name_plural = 'Order Notes'
+
+    related_order = models.ForeignKey(
+        Order,
+        on_delete=models.CASCADE,
+        related_name='related_order')
+    date = models.DateTimeField(auto_now_add=True)
+    order_fulfilled = models.BooleanField(
+        "Fulfilled?", default=False, choices=FULFILLED)
+    order_notes = models.TextField()
+
+    def __str__(self):
+        return f'Order notes for message ID: {self.related_order.id}'
