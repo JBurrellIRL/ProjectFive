@@ -18,9 +18,9 @@
                     {% if item.product.image %}
                     <img class="card-img-top" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                     {% else %}
-                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    <img class="card-img-top " src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     {% endif %}
-                    <h5 class="card-text text-center">{{ item.product.name|truncatechars:20 }}</h5>
+                    <h5 class="card-text text-center mt-3">{{ item.product.name|truncatechars:20 }}</h5>
                     <h5 class="card-text text-center">{{ item.product.artist }}</h5>
                     <p class="card-text text-center">€{{ item.product.price }}</p>
                     <form method="post" action="{% url 'remove_from_bag' item.id %}">

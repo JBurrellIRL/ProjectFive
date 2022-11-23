@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='rating',
-            field=models.DecimalField(blank=True, decimal_places=1, max_digits=4, null=True),
+            field=models.DecimalField(
+                blank=True, decimal_places=1, max_digits=4, null=True),
         ),
     ]

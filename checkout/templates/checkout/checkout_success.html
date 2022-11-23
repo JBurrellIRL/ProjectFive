@@ -199,7 +199,8 @@
         <div class="col-12 col-lg-7 text-right">
             {% if from_profile %}
             <br>
-            <p><strong>NOTE:</strong> These are the details of a previous order, {{ order.order_number  }}. A
+            <p class="text-checkout"><strong>NOTE:</strong> These are the details of a previous order,
+                {{ order.order_number  }}. A
                 confirmation email was sent on the order date.</p>
             <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
                 <span class="icon mr-2">

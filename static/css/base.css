@@ -11,24 +11,11 @@ body {
 
 }
 
-/* Fonts  */
-
-p {
-    font-family: "Roboto", sans-serif;
-    text-align: justify;
+.container-fluid {
+    width: 90%;
 }
 
-h2.products-heading {
-    margin-top: 10px;
-}
-
-.text-light {
-    color: #fff !important;
-}
-
-a.btn-success {
-    font-family: 'Roboto', sans-serif;
-}
+/* Navigation  */
 
 .navbar {
     background-color: #e31f25 !important;
@@ -43,6 +30,29 @@ a.btn-success {
     border-color: #e6e2da !important;
 }
 
+/* Fonts  */
+
+p {
+    font-family: "Roboto", sans-serif;
+    text-align: justify;
+}
+
+p.text-checkout {
+    text-align: left !important;
+}
+
+h2.products-heading {
+    margin-top: 10px;
+}
+
+.text-light {
+    color: #fff !important;
+}
+
+a.btn-success {
+    font-family: 'Roboto', sans-serif;
+}
+
 .jumbotron {
     padding: 20px 25px;
     margin-top: 25px;
@@ -51,10 +61,6 @@ a.btn-success {
     align-items: center;
     justify-content: center;
     background-color: #fff;
-}
-
-.container-fluid {
-    width: 90%;
 }
 
 .image-container {
@@ -94,13 +100,6 @@ button {
 .btn-danger {
     background-color: #e31f25 !important;
 }
-
-/* .card-body {
-    flex: 1 1 auto;
-    padding: 1.25rem;
-    background-color: #f7f7f7;
-    color: white;
-} */
 
 #info-box {
     transition: all .2s ease-in-out;
@@ -166,8 +165,6 @@ i.fa-2x {
     color: #fff;
 }
 
-
-
 input {
     /* width: 100%; */
     font-family: 'Roboto', sans-serif;
@@ -181,6 +178,10 @@ textarea {
     text-align: center;
     padding-top: 10px;
     margin-bottom: 0px;
+}
+
+a.btn-outline-black {
+    padding-left: 0px !important;
 }
 
 .img-fluid {
@@ -208,16 +209,6 @@ p.lead {
 
 footer {
     background-color: #e31f25;
-}
-
-.copyright-section {
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-#footer-details {
-    min-height: 130px;
-    padding-top: 20px;
-    text-align: center;
 }
 
 /* Product Detail page  */
@@ -249,6 +240,14 @@ footer {
         margin-top: 5%;
         margin-left: 0px;
 
+    }
+
+    .review-image {
+        display: none;
+    }
+
+    .review-contents {
+        width: 100%;
     }
 }
 

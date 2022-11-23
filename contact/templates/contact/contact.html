@@ -8,6 +8,7 @@
 
     <!--Django Model Form-->
     <h2 class="my-4">Contact Us!</h2>
+    <p>Send us a message through this Contact form, and you'll receive a reply within 24 hours. Thanks!</p>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{contact_form|crispy}}

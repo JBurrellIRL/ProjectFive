@@ -1,14 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'reviews/css/review.css' %}">
-{% endblock %}
-
 {% block content %}
 
 <div class="container">
-    <h2 class="text-center">Customer Reviews</h2>
+    <h2 class="text-center my-3">Customer Reviews</h2>
     <hr>
     <h3 class="sub-title interactive-color">Leave us a review!</h3>
     <hr>
@@ -25,7 +21,7 @@
     <div class="container">
         <div class="item mb-5">
             <div class="row g-3 g-xl-0">
-                <div class="col-3 col-xl-3">
+                <div class="col-3 col-xl-3 review-image">
                     {% if review.image %}
                     <img class="review-image card-img-top img-fluid mt-2 px-4" src="{{ review.image.url }}"
                         alt="{{ review.name }} Review Image">
@@ -35,9 +31,10 @@
                     {% endif %}
                 </div>
 
-                <div class="col-9">
+                <div class="col-9 review-contents">
                     <h3 class="title mb-1">{{ review.review_title }}</h3>
                     <div class="meta mb-1"><span class="date">{{ review.date | date:"D d M Y"}}</span></div>
+                    <div class="meta mb-1"><span class="author">Author: {{ review.name }}</span></div>
                     <div class="meta mb-1"><span class="review">
                             {% if review.rating == 5 %}
                             <i class="fas fa-star"></i>
