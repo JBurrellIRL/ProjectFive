@@ -245,24 +245,7 @@ footer {
 }
 
 
-/* Media queries  */
 
-@media screen and (max-width: 992px) {
-    h1.product-title {
-        margin-top: 5%;
-        margin-left: 0px;
-
-    }
-
-    .review-image {
-        display: none;
-    }
-
-    .review-contents {
-        width: 100%;
-    }
-
-}
 
 /* Product form  */
 
@@ -306,4 +289,29 @@ footer {
 
 .fa-star {
     color: #f5ce42 !important;
+}
+
+/* Reviews */
+
+.review-container {
+    padding-left: 0px !important;
+}
+
+/* Media queries  */
+
+@media screen and (max-width: 992px) {
+    h1.product-title {
+        margin-top: 5%;
+        margin-left: 0px;
+
+    }
+
+    .review-image {
+        display: none;
+    }
+
+    .review-contents {
+        width: 100%;
+    }
+
 }
