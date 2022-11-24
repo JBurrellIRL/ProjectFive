@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Category(models.Model):
+class Format(models.Model):
     """Model for 'format' category '"""
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -38,8 +38,9 @@ class Product(models.Model):
 
     status = ((0, "Draft"), (1, "Published"))
 
-    """Custom class to overwrite default objects manager, to
-    filter blog posts to only show published products"""
+    """Custom class to overwrite default objects method, to
+    filter blog posts to only show published products
+    https://docs.djangoproject.com/en/4.1/topics/db/managers/"""
 
     class ProductManager(models.Manager):
         def get_queryset(self):
@@ -49,8 +50,8 @@ class Product(models.Model):
         """Random order on each page load"""
         ordering = ['?']
 
-    category = models.ForeignKey(
-        'Category', null=True, blank=True, on_delete=models.SET_NULL)
+    format = models.ForeignKey(
+        'Format', null=True, blank=True, on_delete=models.SET_NULL)
     genre = models.ForeignKey(
         'Genre', null=True, blank=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=100)

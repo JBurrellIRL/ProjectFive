@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
-from .models import Product, Category, Genre
+from .models import Product, Format, Genre
 from .forms import ProductForm
 
 # Create your views here.
@@ -15,7 +15,7 @@ def all_products(request):
     """View to display all published products"""
     products = Product.productmanager.all()
     genres = None
-    categories = None
+    formats = None
     paginaton = Paginator(products, 8)
     page = request.GET.get('page')
 
@@ -27,11 +27,11 @@ def all_products(request):
         products = paginaton.page(paginaton.num_pages)
 
     if request.GET:
-        if "category" in request.GET:
-            categories = request.GET["category"].split(",")
+        if "format" in request.GET:
+            formats = request.GET["format"].split(",")
             products = Product.productmanager.filter(
-                category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+                format__name__in=formats)
+            formats = Format.objects.filter(name__in=formats)
 
         if "genre" in request.GET:
             genres = request.GET["genre"].split(",")
@@ -41,7 +41,7 @@ def all_products(request):
 
     context = {
         'products': products,
-        'current_categories': categories,
+        'current_formats': formats,
     }
 
     return render(request, 'products/products.html', context)
@@ -50,11 +50,13 @@ def all_products(request):
 def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
-    category = Category.objects.all()
+    format = Format.objects.all()
+    genre = Genre.objects.all()
 
     context = {
         'product': product,
-        'category': category,
+        'format': format,
+        'genre': genre,
     }
 
     return render(request, 'products/product_detail.html', context)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Genre
+from .models import Product, Format, Genre
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -10,7 +10,7 @@ class ProductAdmin(SummernoteModelAdmin):
         'sku',
         'name',
         'artist',
-        'category',
+        'format',
         'genre',
         'price',
         'status',
@@ -19,8 +19,8 @@ class ProductAdmin(SummernoteModelAdmin):
     ordering = ('artist',)
 
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(Format)
+class FormatAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
