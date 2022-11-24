@@ -97,6 +97,10 @@ button {
     font-family: 'Roboto', sans-serif;
 }
 
+.button-border {
+    border-color: #212529;
+}
+
 .btn-warning {
     font-family: 'Roboto', sans-serif;
 }
@@ -184,9 +188,13 @@ textarea {
     margin-bottom: 0px;
 }
 
-a.btn-outline-black {
-    padding-left: 0px !important;
+a.btn {
+    font-family: 'Roboto', sans-serif;
 }
+
+/* a.btn-outline-black {
+    padding-left: 0px !important;
+} */
 
 .img-fluid {
     align-items: center;

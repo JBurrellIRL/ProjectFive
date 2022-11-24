@@ -5,14 +5,14 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="card-text mt-3 mb-3">Your Shopping Bag</h1>
+    <h1 class="mt-3 mb-3">Your Shopping Bag</h1>
     <!-- Explain cart page and shows items in cart, if any -->
     {% if bag_items %}
-    <p class="card-text mt-3 mb-3"> This is the contents of your cart. Proceed to checkout by clicking on the green
+    <p class="mt-3 mb-3"> This is the contents of your cart. Proceed to checkout by clicking on the green Checkout
         button below.</p>
     {% if free_delivery_delta > 0 %}
     <p class="mb-1 text-danger">
-        You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+        You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
     </p>
     {% endif %}
     <a href="{% url 'products' %}" class="btn btn-warning btn-lg mt-2 mb-4 mx-auto" role="button">Keep Shopping</a>
@@ -65,6 +65,7 @@
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-sm-12">
             <a href="{% url 'checkout' %}" class="btn btn-success btn-lg mt-2 mx-auto" role="button">Checkout</a>
         </div> -->
+        {% for item in bag_items %}
         <div class="row text-black text-right">
             <div class="col-9">
                 <p class="my-0">Order Total:</p>
@@ -72,12 +73,13 @@
                 <p class="my-0">Grand Total:</p>
             </div>
             <div class="col-3">
-                <p class="my-0">${{ total | floatformat:2 }}</p>
-                <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                <p class="my-0">€{{ total | floatformat:2 }}</p>
+                <p class="my-0">€{{ delivery | floatformat:2 }}</p>
+                <p class="my-0"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
                 <a href="{% url 'checkout' %}" class="btn btn-success btn-md mt-2 mx-auto" role="button">Checkout</a>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
