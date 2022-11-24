@@ -297,6 +297,42 @@ footer {
     padding-left: 0px !important;
 }
 
+/* Register and Login page styling  */
+
+.signup input,
+.login input {
+    width: 100%;
+    border: 1px solid #212529;
+    padding: 5px;
+    margin: 5px 0 10px 0;
+}
+
+.signup label,
+.login label {
+    display: block;
+    text-align: center;
+    color: #212529;
+    font-weight: bold;
+}
+
+.sign-in-button {
+    margin: 8px;
+}
+
+.login label[for="id_remember"] {
+    display: inline;
+    margin: 5px;
+}
+
+.login #id_remember {
+    width: 20px;
+    display: inline;
+}
+
+.authentication-username {
+    text-transform: lowercase;
+}
+
 /* Media queries  */
 
 @media screen and (max-width: 992px) {
