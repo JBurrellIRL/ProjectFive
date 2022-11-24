@@ -10,6 +10,12 @@
     {% if bag_items %}
     <p class="card-text mt-3 mb-3"> This is the contents of your cart. Proceed to checkout by clicking on the green
         button below.</p>
+    {% if free_delivery_delta > 0 %}
+    <p class="mb-1 text-danger">
+        You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+    </p>
+    {% endif %}
+    <a href="{% url 'products' %}" class="btn btn-warning btn-lg mt-2 mb-4 mx-auto" role="button">Keep Shopping</a>
     <div class="row">
         {% for item in bag_items %}
         <div class="col-12 col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
@@ -50,13 +56,27 @@
 <div class="container">
     <hr>
     <div class="row mx-auto">
-        <div class="col-xl-7 col-lg-7 col-md-2 col-sm-12 col-xs-12"></div>
+        <!-- <div class="col-xl-7 col-lg-7 col-md-2 col-sm-12 col-xs-12"></div>
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <h6>Shipping: ${{ delivery|floatformat:2 }}</h6>
-            <h2 class="card-text my-2">Total: €{{ grand_total|floatformat:2 }}</h2>
+            <h6>Order Total: €{{ total|floatformat:2 }}</h6>
+            <h6>Shipping: €{{ delivery|floatformat:2 }}</h6>
+            <h2 class="card-text my-2">Total To Pay: €{{ grand_total|floatformat:2 }}</h2>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-12 col-sm-12">
-            <a href="{% url 'checkout' %}" class="btn btn-success btn-lg mt-2 mb-4 mx-auto" role="button">Checkout</a>
+            <a href="{% url 'checkout' %}" class="btn btn-success btn-lg mt-2 mx-auto" role="button">Checkout</a>
+        </div> -->
+        <div class="row text-black text-right">
+            <div class="col-9">
+                <p class="my-0">Order Total:</p>
+                <p class="my-0">Delivery:</p>
+                <p class="my-0">Grand Total:</p>
+            </div>
+            <div class="col-3">
+                <p class="my-0">${{ total | floatformat:2 }}</p>
+                <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                <a href="{% url 'checkout' %}" class="btn btn-success btn-md mt-2 mx-auto" role="button">Checkout</a>
+            </div>
         </div>
     </div>
 </div>

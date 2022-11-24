@@ -97,6 +97,10 @@ button {
     font-family: 'Roboto', sans-serif;
 }
 
+.btn-warning {
+    font-family: 'Roboto', sans-serif;
+}
+
 .btn-danger {
     background-color: #e31f25 !important;
 }
@@ -249,6 +253,7 @@ footer {
     .review-contents {
         width: 100%;
     }
+
 }
 
 /* Product form  */

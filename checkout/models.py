@@ -95,7 +95,7 @@ class OrderNotes(models.Model):
     Model to store internal notes for customer messages
     """
     FULFILLED = [(False, 'No'), (True, 'Yes')]
-    
+
     class Meta:
         verbose_name_plural = 'Order Notes'
 
