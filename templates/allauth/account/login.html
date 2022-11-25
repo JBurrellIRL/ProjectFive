@@ -15,7 +15,8 @@
       <p>{% blocktrans %}Welcome back to JB's Record Store. To log into your account, please log in. If
         you
         have not created an account yet, then <a class="link" href="{{ signup_url }}"> <strong>Sign Up</strong></a>
-        first.{% endblocktrans %}</p>
+        first.{% endblocktrans %} If you've forgotten your password, then <a class="link"
+          href="{% url 'account_reset_password' %}"> <strong>click here</strong></a>to reset it. </p>
     </div>
   </div>
   <div class="row">
@@ -28,6 +29,7 @@
         {% endif %}
         <button class="btn btn-dark btn-signup right sign-in-button" type="submit">{% trans "Sign In" %}</button>
       </form>
+
     </div>
   </div>
 </div>
