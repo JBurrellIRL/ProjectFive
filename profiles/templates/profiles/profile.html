@@ -11,8 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">My Profile</h2>
+            <h2 class="logo-font mb-4 mt-4">My Profile</h2>
             <hr>
         </div>
     </div>
@@ -26,8 +25,13 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <br>
-                <button class="btn btn-dark btn-signup rounded-0">Update Information</button>
+                <button class="btn btn-dark btn-signup rounded-0">Update Shipping Information</button>
             </form>
+            <hr>
+            <a href="{% url 'account_change_password' %}" class="btn btn-dark mt-2 mb-3 mx-auto" role="button">Change
+                Your
+                Password</a>
+            <hr>
         </div>
         <div class="col-12 col-lg-6">
             <p class="text-muted">Previous Orders</p>

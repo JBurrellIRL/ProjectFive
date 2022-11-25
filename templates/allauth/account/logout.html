@@ -8,14 +8,13 @@
 <div class="container login-screen">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Log Out" %} - <span class="authentication-username">{{ user.username }}</span></h3>
-
+      <h2>{% trans "Log Out" %} - <span class="authentication-username">{{ user.username }}</span></h2>
+      <hr>
       <p class="sign-out">{% trans 'Are you sure you want to sign out?' %}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-
       <form class="sign-out" method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
         {% if redirect_field_value %}
