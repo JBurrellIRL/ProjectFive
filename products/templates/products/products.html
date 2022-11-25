@@ -35,15 +35,15 @@
                         <h5 class="card-meta">Artist: {{ product.artist }} </h5>
                         <!-- <h5 class="card-meta">Release Year: {{ product.release_year }}</h5> -->
                         {% if product.format.friendly_name == 'LP' %}
-                        <h5 class="card-meta"><i class="fa fa-record-vinyl" aria-hidden="true"></i>
+                        <h5 class="card-meta"><i class="bi bi-vinyl-fill"></i>
                             {{ product.format.friendly_name }}</h5>
 
                         {% elif product.format.friendly_name == 'Compact Disc' %}
-                        <h5 class="card-meta"><i class="fa fa-compact-disc"></i>
+                        <h5 class="card-meta"><i class="bi bi-disc"></i>
                             {{ product.format.friendly_name }}</h5>
 
                         {% elif product.format.friendly_name == 'Cassette' %}
-                        <h5 class="card-meta"><i class="fa fa-camera-retro"></i>
+                        <h5 class="card-meta"><i class="bi bi-cassette-fill"></i>
                             {{ product.format.friendly_name }}</h5>
                         {% endif %}
                         <h5 class="card-meta">Genre: {{ product.genre.friendly_name }}</h5>
