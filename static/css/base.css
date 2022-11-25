@@ -41,10 +41,6 @@ p.text-checkout {
     text-align: left !important;
 }
 
-h2.products-heading {
-    margin-top: 10px;
-}
-
 .text-light {
     color: #fff !important;
 }
@@ -243,6 +239,8 @@ footer {
     margin-top: 20%;
     margin-left: 5%;
 }
+
+
 
 
 
