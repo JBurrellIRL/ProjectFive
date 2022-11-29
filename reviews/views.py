@@ -7,8 +7,8 @@ from django.http import HttpResponse
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 def all_reviews(request):
@@ -38,7 +38,17 @@ class AddReview(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class UpdateReview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+class UpdateReview(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+
+    def test_func(self):
+        """
+        This validates that only the reviewer or the admin can edit their review.
+        """
+        if self.request.user.is_superuser:
+            return True
+        review = self.get_object()
+        return review.name == self.request.user.username
+
     model = Reviews
     form_class = ReviewsForm
     template_name = "reviews/update_review.html"
