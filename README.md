@@ -208,3 +208,63 @@ During development, SQLite was used for the site database and for production, El
 - The order history section displays a list of all previous orders placed by the customer.
 - The display includes the order number, date the order was placed and order total.
 - Clicking the order number will take the user to a summary page of that order, with a note stating that the confirmnation shown is of a previous order, not a new one.
+
+### Store Page
+
+**Store Landing Page**
+
+![store](store-all)
+
+- The user can reach the products page by either clicking on the "Shop Now" button on the homepage, or via the site navigation. The user has an option to browse by either music genre or physical format from the site navigation. In both the Genre and Format dropdown menus, the user sees an option to browse either by "All Products", which returns all products (paginated to 8 products per page) or by the category filter that they choose.
+- The landing page is fully responsive, and changes the number of products per row based on the width of the user's browser window.
+- The user will see a product thumbnail image, artist, format, genre, price and an excerpt description.
+- The user has an option to add an item to their shopping cart on the landing page. 
+- If the user is logged in as a store administrator, they'll also see buttons for Editing and Deleting products under the Add to Cart button.
+
+**Product Detail Page**
+
+![store](product-detail)
+
+- After clicking on an individual product on the Products page, the user will be taken to the full product details. 
+- The product details page displays the product image, artist, format, genre, item condition, Discogs album rating and price, as well as an Add to Cart button. Under everything, the user will see a detailed product description.
+- If the user is logged in as a store administrator, they'll also see buttons for Editing and Deleting products under the Add to Cart button.
+
+### Store Management
+
+**Add Product**
+
+![store-management](add-product)
+
+- A product can be added to the store by a superuser by clicking on the "Add Product" option in the navigation bar user dropdown menu. This option is only visible to superusers.
+- If a user that isn't logged in tries to add a product by using the direct URL to the Add Product page, they'll be redirected to the Sign In page.
+- If a user then logs into a non-superuser account, they'll receive a message to say that only store administrators can add products, and be redirected to the homepage.
+- The user must fill out the fields marked with asterisks. Otherwise, the user won't be allowed to submit the new product and the browser will activate the next compulsory field.
+- The 'description' field is the Summernote WYSIWYG editor, added as an extra Django package. It renders in both the back-end and front-end.
+- The SKU field requires a unique value. If a previously-used SKU is entered into this field, the user receives an error to say that this SKU has already been used. 
+- The user can upload an image to the product. If they do not, a default image is used. 
+- The user will only be able to submit the form if the form does not return any errors. If there's no errors found, they'll receive a success message after submitting the form.
+
+**Edit Product**
+
+![store-management](edit-product)
+
+- A superuser can choose to edit a product through the front-end on both the main Store page and also the product detail page. 
+- If a non-superuser tries to edit the product using the direct editing URL, they're redirected to the login page.
+- If the user then logs in as a regular user, they receive an error stating that "only store administrators can do that", and are redirected to the homepage.
+- The form opens with the original content rendered.
+- The 'description" field is the Summernote WYSIWYG field, as with the Add Product form.
+- The image field displays a thumbnail of the existing image, and a checkbox option exists to allow the superuser to clear the existing image. 
+- Once the product has been adjusted, the superuser receives a success message to notify them that the product has been successfully updated.
+
+**Delete Product**
+
+![store-management](edit-product)
+
+- A superuser has the option to delete products through the site back-end, and also through the front-end on both the Store page and also the Product Detail page.
+- Clicking on the "Delete" button opens a Bootstrap modal, asking the user if they want to confirm deletion of the product.
+- Clicking "Delete" returns a "Product Deleted" message and the product is removed from the database.
+
+
+
+
+
