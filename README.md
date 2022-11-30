@@ -265,6 +265,19 @@ During development, SQLite was used for the site database and for production, El
 - Clicking "Delete" returns a "Product Deleted" message and the product is removed from the database.
 
 
+### Shopping Bag
+
+![shopping-bag](bag)
+
+- When the user clicks on the shopping bag icon in the nav bar they are taken to the Shopping Bag page, which shows the products added to the cart, order total, applicable charge for delivery and overall total to be charged.
+- The user also sees a notification about how much extra they need to spend to get free shipping, if they are below the free shipping threshold. If they are above that threshold, this message does not appear.
+- The user has an option to return to the Store page by clicking on the "Keep Shopping" button.
+- The user can remove items from their shopping bag by clicking on the "Remove" button under the product thumbnail. Upon clicking on this, the shopping bag is updated, as are the order totals.
+- If the user removes everything from their shopping bag, they receive a message stating that their shopping bag is empty. The order total fields and the "Go To Checkout" button disappear if this takes place.
+- Once ready, the user can then proceed to the checkout page by clicking on the "Go To Checkout" button, as long as there is items in their shopping bag at this stage.
+
+
+
 
 
 
