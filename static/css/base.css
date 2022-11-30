@@ -215,8 +215,13 @@ p.lead {
     font-weight: 400;
 }
 
+/* Footer  */
 footer {
     background-color: #e31f25;
+}
+
+i.social-icons {
+    font-size: 23px;
 }
 
 /* Product Detail page  */
@@ -309,7 +314,11 @@ p.sign-out {
     display: block;
     text-align: center;
     color: #212529;
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+
+.allauth-form-content label:not([for='id_remember']) {
+    display: none;
 }
 
 .sign-in-button {

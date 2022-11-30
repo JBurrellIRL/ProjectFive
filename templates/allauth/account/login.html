@@ -1,36 +1,28 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 
 {% load i18n %}
-{% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
 
-<div class="container login-screen">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h2>{% trans "Sign In" %}</h2>
-      <hr>
-      <p>{% blocktrans %}Welcome back to JB's Record Store. To log into your account, please log in. If
-        you
-        have not created an account yet, then <a class="link" href="{{ signup_url }}"> <strong>Sign Up</strong></a>
-        first.{% endblocktrans %} If you've forgotten your password, then <a class="link"
-          href="{% url 'account_reset_password' %}"> <strong>click here</strong></a> to reset it. </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2 mt-3 mb-3">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-dark btn-signup right sign-in-button" type="submit">{% trans "Sign In" %}</button>
-      </form>
+<hr>
+<h2 class="logo-font mb-4">{% trans "Sign In" %}</h2>
+<hr>
+<p>{% blocktrans %}If you have not created an account yet, then please
+  <strong><a href="{{ signup_url }}">sign up</a></strong> first.{% endblocktrans %}If you've forgotten your password,
+  then <a class="link" href="{% url 'account_reset_password' %}"> <strong>click here</strong></a> to reset it.</p>
 
-    </div>
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form|crispy }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <div class="text-center">
+    <a class="btn btn-outline-black rounded-0 button-border" href="{% url 'home' %}">Home</a>
+    <button class="btn btn-dark rounded-0" type="submit">{% trans "Sign In" %}</button>
   </div>
-</div>
+</form>
+
 {% endblock %}

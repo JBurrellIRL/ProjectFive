@@ -1,33 +1,29 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
-{% block content %}
-<div class="container login-screen">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
+{% block inner_content %}
+<hr>
+<h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>
+<hr>
 
-      <p>{% blocktrans %}Welcome back to JB's Record Store. Do you already have an account? Then please <a class="link"
-          href="{{ login_url }}"> <strong>Sign In</strong></a> instead{% endblocktrans %}. If you've forgotten your
-        password, then <a class="link" href="{% url 'account_reset_password' %}"> <strong>click here</strong></a> to
-        reset it. </p>
-    </div>
+<p>{% blocktrans %}Welcome to JB's Record Store. If you already have an account, please <strong><a
+      href="{{ login_url }}">sign
+      in</a></strong>.{% endblocktrans %} If you've forgotten your password, then <a class="link"
+    href="{% url 'account_reset_password' %}"> <strong>click here</strong></a> to reset it.</p>
+
+<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+  {% csrf_token %}
+  {{ form|crispy }}
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <div class="text-center">
+    <a class="btn btn-outline-black rounded-0 button-border" href="{% url 'account_login' %}">Back to Login</a>
+    <button class="btn btn-dark rounded-0" type="submit">{% trans "Sign Up" %}</button>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-sm-8 col-md-6 col-lg-6 mt-3 mb-3">
-      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-dark btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
-      </form>
-    </div>
-  </div>
-</div>
+</form>
 
 {% endblock %}

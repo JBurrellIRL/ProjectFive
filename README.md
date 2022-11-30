@@ -107,3 +107,104 @@ During development, SQLite was used for the site database and for production, El
 - Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site, to ensure the integrity of the forms.
 - Django's LoginRequiredMixin is used for the relevant class-based views in order to restrict access to authenticated users only. Non-authenticated users are redirected to the login page. The UserPassesTestMixin is used to ensure that only the customer that left a review (or the site admin) can edit the review through the front-end of the site.
 - For Django function-based views, the login_required decorator is used to restrict access as required.
+- I created custom 404 and 403 error pages, to inform the user of the applicable error. These pages also include buttons to return the user to the site homepage.
+
+## Site Features
+
+### Header
+
+**Site Title**
+
+- The user is greeted with a site title, positioned to the left, which is clearly defined in the site header. The site title returns the user to the homepage if clicked.
+
+![header](docs/readme-images/navigation.png)
+
+**Navigation**
+
+- The navigation bar is positioned at the top of each page in the site, and includes links to the most popular pages within the site.
+- The navigation bar items display differently depending on whether or not the site visitor is logged in. 
+- If the visitor is logged out, they'll see an option to either register for an account or to log into an existing account:
+
+![header](docs/readme-images/navigation.png)
+
+- If the visitor has logged in or registered, the options to register or log in are replaced by a user icon (from Font Awesome) and their username, to show them that they are logged in under that username. Clicking on the username opens a dropdown menu, where the user has an option to go to their profile, add a new product (if logged in as the superuser) or to Logout.
+
+![header](docs/readme-images/nav-loggedin.png)
+
+- The navigation bar also includes a shopping bag, which can be clicked on to reach the shopping bag page. Beside this is a field that shows the running total of the contents of the shopper's bag. This updates dynamically as the shopper adds items to their bag:
+
+![header](shopping bag)
+
+- The navigation bar uses Bootstrap classes and is fully responsive to screens of different sizes. It switches to a "hamburger" menu at 992px:
+
+![header](docs/readme-images/hamburger.png)
+
+- The dropdown menus within the hamburger menu retain a white background, so that they're easy for the user to navigate on a mobile device:
+
+![header](docs/readme-images/hamburger.png)
+
+### Footer
+
+![footer](docs/readme-images/footer.png)
+
+- The site footer includes links to Terms/Conditions, Privacy Policy. Customer Reviews and other important pages within the site.
+- There's also links to Facebook, Twitter and Instagram along with a link to my personal Discogs record collection catalogue. 
+- The external links are coded to open in a new browser tab, so that the visitor is not taken away from the website. The internal links open in the same tab.
+- There's also a reference to me as the site designer, along with a link to my personal website.
+
+### Home Page
+
+**Welcome section**
+
+-The home page includes a welcome image and a "Shop Now" button to encourage the user to go to the Product Page. It also includes a brief welcoming paragraph to educate the user on the purpose of this store. Some important keywords are added in `<strong></strong>` tags for the benefit of search engine indexing.
+
+![home](banner image)
+
+**General Information section**
+
+-This part of the homepage includes general information about the store, positioned in responsive cards. The cards contain information useful to the user, and directs them to other areas of the site for further information:
+
+![home](homepage cards)
+
+**Marketing & About Me section**
+
+-The next section includes a newsletter block that allows the site visitor to sign up to my mailing list. The mailing list is set up via the Mailchimp marketing platform. The text blurb to the right of this includes some brief information about me.
+
+![home](marketing section)
+
+### User Account Pages
+
+**Sign Up**
+
+![sign-up](signup)
+
+**Log In**
+
+![log-in](login)
+
+**Log Out**
+
+![log-out](logout)
+
+- I used the django-allauth package to create the Sign up, Log in and Log out functionality.
+- The user receives messages in their browser to confirm whether or not their login attempt has been successful. They also receive notifications if they've made an error in one of the sign-up or login fields.
+- When a user signs up for an account they must verify their membership by clicking on the authentication link emailed to the address they provided.
+- If a user forgets their password they can reset it by clicking the 'Forgot Password' on the log in and registration pages.
+
+### User Profile
+
+**Delivery information**
+
+![profile](default address)
+
+- The delivery address section stores the user's delivery address and phone number.
+- The information provided here can be used to autofill the address fields at checkout, to save the customer time.
+- There's also an option here for the customer to change their login password, if they wish to.
+
+**Previous Orders**
+
+![profile](previous orders)
+
+- The order history section displays a list of all previous orders placed by the customer.
+- The display includes the order number, date the order was placed and order total.
+- Clicking the order number will take the user to a summary page of that order, with a note stating that the confirmnation shown is of a previous order, not a new one.
