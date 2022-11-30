@@ -193,11 +193,11 @@ During development, SQLite was used for the site database and for production, El
 
 ### User Profile
 
-**Delivery information**
+**Shipping information**
 
 ![profile](docs/readme_images/shipping-info.png)
 
-- The delivery address section stores the user's delivery address and phone number.
+- The shipping address section stores the user's shipping address and phone number.
 - The information provided here can be used to autofill the address fields at checkout, to save the customer time.
 - There's also an option here for the customer to change their login password, if they wish to.
 
@@ -227,7 +227,7 @@ During development, SQLite was used for the site database and for production, El
 
 - After clicking on an individual product on the Products page, the user will be taken to the full product details. 
 - The product details page displays the product image, artist, format, genre, item condition, Discogs album rating and price, as well as an Add to Cart button. Under everything, the user will see a detailed product description.
-- If the user is logged in as a store administrator, they'll also see buttons for Editing and Deleting products under the Add to Cart button.
+- If the user is logged in as a store administrator, they'll also see buttons for Editing and Deleting products above the Add to Cart button.
 
 ### Store Management
 
@@ -269,13 +269,78 @@ During development, SQLite was used for the site database and for production, El
 
 ![shopping-bag](docs/readme_images/shopping-cart.png)
 
-- When the user clicks on the shopping bag icon in the nav bar they are taken to the Shopping Bag page, which shows the products added to the cart, order total, applicable charge for delivery and overall total to be charged.
+- When the user clicks on the shopping bag icon in the nav bar they are taken to the Shopping Bag page, which shows the products added to the cart, order total, applicable charge for shipping and overall total to be charged.
 - The user also sees a notification about how much extra they need to spend to get free shipping, if they are below the free shipping threshold. If they are above that threshold, this message does not appear.
 - The user has an option to return to the Store page by clicking on the "Keep Shopping" button.
 - The user can remove items from their shopping bag by clicking on the "Remove" button under the product thumbnail. Upon clicking on this, the shopping bag is updated, as are the order totals.
 - If the user removes everything from their shopping bag, they receive a message stating that their shopping bag is empty. The order total fields and the "Go To Checkout" button disappear if this takes place.
 - Once ready, the user can then proceed to the checkout page by clicking on the "Go To Checkout" button, as long as there is items in their shopping bag at this stage.
 
+### Checkout area
+
+![checkout](docs/readme_images/checkout-page.png)
+
+**Personal Details**
+
+- Within the details section the user can fill out their personal details, shipping address and payment information.
+- If the user is a guest, an option to either create a new account or log into an existing account is visible.
+- If the user is logged in, a checkbox to save the shipping information to their profile can be selected.
+- If the user is signed in and has shipping information saved, the shipping details and email address will auto-populate from the already-saved user profile.
+- If a user leaves a required field empty or inputs invalid or empty data, an error will appear to prompt the user to check their inputs.
+
+**Order Summary**
+
+- The Order Summary section lists the items about to be purchased, along with the item subtotal and an order total.
+- The order totals give a breakdown of the order total, the cost of shipping and also the grand total to be charged from the customer card.
+- The image thumbnail links back to that product's detail page.
+
+**Payment**
+
+- The site payments are handled by the Stripe payment processor. This is a secure payment platform, documentation for it can be found here: https://stripe.com/docs/ .
+- Invalid card details will trigger a red warning message stating that the card details entered are invalid.
+- After the user clicks to complete payment, a loading screen will be triggered, to let the user know that their transaction is being processed and to discourage them from navigating away before this takes place.
+- If the payment form fails or the user closes the browser window before the loading screen disappears, the transaction should still succeed through the inbuilt webhook.
+- The payment webhook is designed to search through the database to see if the customer's order exists. If it does not, the webhook will create the order using the customer's details and payment information.
+
+**Order Confirmation**
+
+![checkout](docs/readme_images/checkout-success.png)
+
+- Completing the order takes the user to the checkout success page. Here, the user will see a summary of their completed order, including the shipping address, items purchased and order total. The order also receives a randomly-generated order number. This information will also be visible to a registered user under their "Profile" section described earlier.
+- The customer will also receive an email to confirm their order.
+
+### Customer Reviews section
+
+![reviews](docs/readme_images/reviews-page.png)
+
+- The Customer Reviews page can be reached by clicking on the link to the page in the footer of the site.
+- When a user navigates to this page, they can see reviews left by previous users. Each review includes the review itself, the username of the reviewer, the rating given by the user, the date the review was left and an image optionally uploaded by the reviewer. If the user chooses not to upload an image, a placeholder image is used instead. 
+- The user must be logged in to be able to leave a review. If the person is logged out, a message will appear to let them know they must be logged in to be able to leave a review.
+- Once the review is submitted, it must be approved by the site administrator before it can be viewed on the site.
+- After the review is approved and is appearing on the site, a logged-in user will have the option to either edit or delete any reviews left by themselves, through buttons that appear under the "Rating" section.
+ 
+**Add Review page**
+
+![reviews](docs/readme_images/add-review.png)
+
+- The user can give their review a title, give it a rating and write a paragraph to describe their experience. They can also optionally upload an image to go alongside their review, once it's been approved by the site administrator.
+- Once the review is submitted, the customer receives a message to confirm that the review has been received, and is awaiting approval.
+
+**Edit Review page**
+
+![reviews](docs/readme_images/edit-review.png)
+
+- The user can edit reviews left by themselves only. On the main Reviews page, an option to Edit the existing review will appear under the Rating.
+- If someone attempts to edit a review attributed to another user through the direct URL to the editing page, they're redirected to the login screen.
+- If they log into an account that did not leave the review they're attempting to edit, they see a custom 403 "forbidden" page, with a link back to the site homepage.
+
+**Delete Review**
+
+![reviews](docs/readme_images/delete-review.png)
+
+- A logged-in user will have access to a Delete button on reviews that they've previously left. This button appears under the "Rating" field on the main reviews page.
+- Clicking on the "Delete" button triggers a Bootstrap modal, asking the user to provide confirmation for the deletion of the review.
+- Clicking "Delete" returns a "Review Deleted" message and the review is permanently removed from the database.
 
 
 

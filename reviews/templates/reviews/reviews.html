@@ -58,9 +58,11 @@
                             <i class="fas fa-star"></i>
                             {% endif %}
                         </span></div>
-                    {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
+                    {% if user.is_authenticated and user.username == review.name %}
                     <a class="btn btn-danger mb-3" href="update_review/{{review.id}}"
                         aria-label="Go to edit review {{review.id}} page">Edit</a>
+                    {% endif %}
+                    {% if user.is_authenticated and user.username == review.name or user.is_superuser %}
                     <button type="button" class="btn btn-danger mb-3" data-bs-toggle="modal"
                         data-bs-target="#delete-review-{{review.id}}" aria-label="Delete">Delete</button>
                     {% endif %}
