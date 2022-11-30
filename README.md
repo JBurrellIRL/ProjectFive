@@ -264,6 +264,13 @@ During development, SQLite was used for the site database and for production, El
 - Clicking on the "Delete" button opens a Bootstrap modal, asking the user if they want to confirm deletion of the product.
 - Clicking "Delete" returns a "Product Deleted" message and the product is removed from the database.
 
+**Order management in admin panel**
+
+![store-management](docs/readme_images/order-notes.png)
+
+- Once an order is received, it will appear in the site admin area for the site administrator to view. 
+- To help with order management, the site admin also has access to an Order Notes section in the admin panel. Here, the administrator can add a new note and associate it directly with a received order as a foreign key. The administrator can add notes such as the date the order was shipped, tracking numbers etc, and set the order to Fulfilled: Yes or No. This information is stored in the database to help the site administrator with order management.
+
 
 ### Shopping Bag
 
@@ -342,7 +349,29 @@ During development, SQLite was used for the site database and for production, El
 - Clicking on the "Delete" button triggers a Bootstrap modal, asking the user to provide confirmation for the deletion of the review.
 - Clicking "Delete" returns a "Review Deleted" message and the review is permanently removed from the database.
 
+### Contact Form
 
+![contact](docs/readme_images/contact-us.png)
 
+- A user can open the Contact Us page from either the main top navigation or the footer navigation. 
+- The user can submit a query through the form by filling out each field with valid input. 
+- If the user inputs a non-email address into the email field, an error is returned to ask the user to check their input.
+- If a field is left blank, an error is returned to inform the user that they must fill out that field.
+- The site administrator will receive an email with the contents of each submission through the form. The submissions are also logged in the site database and can be managed from within the admin panel.
+- The site administrator also has a "Contact Notes" section built into the admin panel, that is associated with each submission. They can log their reply in this area, and mark each message as "replied to" or "awaiting reply".
 
+### Terms & Conditions page
 
+![terms](docs/readme_images/terms-conditions.png)
+
+- The user can reach the Terms & Conditions page through the link in the footer navigation.
+- Here, the user can read the terms and conditions under which the store operates.
+- The content was generated using the Free Terms and Conditions Generator [here](https://www.termsandconditionsgenerator.com/).
+
+### Privacy Policy page
+
+![privacy](docs/readme_images/privacy-policy.png)
+
+- The user can reach the Privacy Policy page through the link in the footer navigation.
+- Here, the user can find details on the store's privacy policy and how it uses the customer's data.
+- The content was generated using the Privacy Policy Generator [here](https://www.privacypolicygenerator.info/).
