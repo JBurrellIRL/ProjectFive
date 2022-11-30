@@ -117,7 +117,7 @@ During development, SQLite was used for the site database and for production, El
 
 - The user is greeted with a site title, positioned to the left, which is clearly defined in the site header. The site title returns the user to the homepage if clicked.
 
-![header](docs/readme-images/navigation.png)
+![header](docs/readme_images/navigation.png)
 
 **Navigation**
 
@@ -125,27 +125,27 @@ During development, SQLite was used for the site database and for production, El
 - The navigation bar items display differently depending on whether or not the site visitor is logged in. 
 - If the visitor is logged out, they'll see an option to either register for an account or to log into an existing account:
 
-![header](docs/readme-images/navigation.png)
+![header](docs/readme_images/nav-logged-out.png)
 
 - If the visitor has logged in or registered, the options to register or log in are replaced by a user icon (from Font Awesome) and their username, to show them that they are logged in under that username. Clicking on the username opens a dropdown menu, where the user has an option to go to their profile, add a new product (if logged in as the superuser) or to Logout.
 
-![header](docs/readme-images/nav-loggedin.png)
+![header](docs/readme_images/nav-logged-in.png)
 
 - The navigation bar also includes a shopping bag, which can be clicked on to reach the shopping bag page. Beside this is a field that shows the running total of the contents of the shopper's bag. This updates dynamically as the shopper adds items to their bag:
 
-![header](shopping bag)
+![header](docs/readme_images/shopping-bag.png)
 
 - The navigation bar uses Bootstrap classes and is fully responsive to screens of different sizes. It switches to a "hamburger" menu at 992px:
 
-![header](docs/readme-images/hamburger.png)
+![header](docs/readme_images/hamburger.png)
 
 - The dropdown menus within the hamburger menu retain a white background, so that they're easy for the user to navigate on a mobile device:
 
-![header](docs/readme-images/hamburger.png)
+![header](docs/readme_images/dropdown-burger.png)
 
 ### Footer
 
-![footer](docs/readme-images/footer.png)
+![footer](docs/readme_images/footer.png)
 
 - The site footer includes links to Terms/Conditions, Privacy Policy. Customer Reviews and other important pages within the site.
 - There's also links to Facebook, Twitter and Instagram along with a link to my personal Discogs record collection catalogue. 
@@ -158,33 +158,33 @@ During development, SQLite was used for the site database and for production, El
 
 -The home page includes a welcome image and a "Shop Now" button to encourage the user to go to the Product Page. It also includes a brief welcoming paragraph to educate the user on the purpose of this store. Some important keywords are added in `<strong></strong>` tags for the benefit of search engine indexing.
 
-![home](banner image)
+![home](docs/readme_images/banner-area.png)
 
 **General Information section**
 
 -This part of the homepage includes general information about the store, positioned in responsive cards. The cards contain information useful to the user, and directs them to other areas of the site for further information:
 
-![home](homepage cards)
+![home](docs/readme_images/homepage-cards.png)
 
 **Marketing & About Me section**
 
 -The next section includes a newsletter block that allows the site visitor to sign up to my mailing list. The mailing list is set up via the Mailchimp marketing platform. The text blurb to the right of this includes some brief information about me.
 
-![home](marketing section)
+![home](docs/readme_images/marketing-section.png)
 
 ### User Account Pages
 
 **Sign Up**
 
-![sign-up](signup)
+![sign-up](docs/readme_images/authentication/register.png)
 
 **Log In**
 
-![log-in](login)
+![log-in](docs/readme_images/authentication/login.png)
 
 **Log Out**
 
-![log-out](logout)
+![log-out](docs/readme_images/authentication/logout.png)
 
 - I used the django-allauth package to create the Sign up, Log in and Log out functionality.
 - The user receives messages in their browser to confirm whether or not their login attempt has been successful. They also receive notifications if they've made an error in one of the sign-up or login fields.
@@ -195,7 +195,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Delivery information**
 
-![profile](default address)
+![profile](docs/readme_images/shipping-info.png)
 
 - The delivery address section stores the user's delivery address and phone number.
 - The information provided here can be used to autofill the address fields at checkout, to save the customer time.
@@ -203,7 +203,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Previous Orders**
 
-![profile](previous orders)
+![profile](docs/readme_images/previous-orders.png)
 
 - The order history section displays a list of all previous orders placed by the customer.
 - The display includes the order number, date the order was placed and order total.
@@ -213,7 +213,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Store Landing Page**
 
-![store](store-all)
+![store](docs/readme_images/store-landing.png)
 
 - The user can reach the products page by either clicking on the "Shop Now" button on the homepage, or via the site navigation. The user has an option to browse by either music genre or physical format from the site navigation. In both the Genre and Format dropdown menus, the user sees an option to browse either by "All Products", which returns all products (paginated to 8 products per page) or by the category filter that they choose.
 - The landing page is fully responsive, and changes the number of products per row based on the width of the user's browser window.
@@ -223,7 +223,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Product Detail Page**
 
-![store](product-detail)
+![store](docs/readme_images/product-detail.png)
 
 - After clicking on an individual product on the Products page, the user will be taken to the full product details. 
 - The product details page displays the product image, artist, format, genre, item condition, Discogs album rating and price, as well as an Add to Cart button. Under everything, the user will see a detailed product description.
@@ -233,7 +233,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Add Product**
 
-![store-management](add-product)
+![store-management](docs/readme_images/add-product.png)
 
 - A product can be added to the store by a superuser by clicking on the "Add Product" option in the navigation bar user dropdown menu. This option is only visible to superusers.
 - If a user that isn't logged in tries to add a product by using the direct URL to the Add Product page, they'll be redirected to the Sign In page.
@@ -246,7 +246,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Edit Product**
 
-![store-management](edit-product)
+![store-management](docs/readme_images/edit-product.png)
 
 - A superuser can choose to edit a product through the front-end on both the main Store page and also the product detail page. 
 - If a non-superuser tries to edit the product using the direct editing URL, they're redirected to the login page.
@@ -258,7 +258,7 @@ During development, SQLite was used for the site database and for production, El
 
 **Delete Product**
 
-![store-management](edit-product)
+![store-management](docs/readme_images/delete-product.png)
 
 - A superuser has the option to delete products through the site back-end, and also through the front-end on both the Store page and also the Product Detail page.
 - Clicking on the "Delete" button opens a Bootstrap modal, asking the user if they want to confirm deletion of the product.
@@ -267,7 +267,7 @@ During development, SQLite was used for the site database and for production, El
 
 ### Shopping Bag
 
-![shopping-bag](bag)
+![shopping-bag](docs/readme_images/shopping-cart.png)
 
 - When the user clicks on the shopping bag icon in the nav bar they are taken to the Shopping Bag page, which shows the products added to the cart, order total, applicable charge for delivery and overall total to be charged.
 - The user also sees a notification about how much extra they need to spend to get free shipping, if they are below the free shipping threshold. If they are above that threshold, this message does not appear.
