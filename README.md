@@ -360,6 +360,13 @@ During development, SQLite was used for the site database and for production, El
 - The site administrator will receive an email with the contents of each submission through the form. The submissions are also logged in the site database and can be managed from within the admin panel.
 - The site administrator also has a "Contact Notes" section built into the admin panel, that is associated with each submission. They can log their reply in this area, and mark each message as "replied to" or "awaiting reply".
 
+### FAQs page
+
+![terms](docs/readme_images/faqs.png)
+
+- The user can reach the FAQs page through the link in the footer navigation.
+- This page contains information on the condition grading of the items available in the store. The user is given a list of condition grades, along with a detailed description of what each grade means.
+
 ### Terms & Conditions page
 
 ![terms](docs/readme_images/terms-conditions.png)
@@ -375,3 +382,7 @@ During development, SQLite was used for the site database and for production, El
 - The user can reach the Privacy Policy page through the link in the footer navigation.
 - Here, the user can find details on the store's privacy policy and how it uses the customer's data.
 - The content was generated using the Privacy Policy Generator [here](https://www.privacypolicygenerator.info/).
+
+## Business Model
+
+JB's Record Store's Business Model is Business to Consumer (B2C). The products for sale in the store are sold directly by the store owner to consumers. A customer of JB's Record Store would most likely be someone who is interested in growing their own record collection, or is interested in browsing rare and hard-to-find items and finding their current market value.
