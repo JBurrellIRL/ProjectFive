@@ -66,3 +66,47 @@ The site visitor can sign up to a newsletter on the store homepage, to receive n
 The site user has access to the store's social media profiles in the site footer. There's links to Facebook, Twitter and Instagram along with a link to the store owner's personal Discogs profile.
 
 ![User Interaction - social](docs/testing_images/social-media.png)
+
+### EPIC 3: Site Content & Navigation
+
+- *As a Site User, I can navigate around the site so that I can find content that's relevant to what I am looking for.*
+
+The site user has access to the main site navigation and footer navigation on all pages on the site. These are site-wide and appear no matter which page the visitor is viewing.
+
+![Site Content - Main Nav](docs/readme_images/navigation.png)
+![Site Content - Footer Nav](docs/readme_images/footer.png)
+
+- *As a site user I can view a list of products so that I can select a product that I'm interested in, to view or purchase.*
+
+The site user can browse a list of products for sale from the main navigation. By clicking into either the "genre" or "format" dropdown menus, they can click to view All Products. They can also click on the "Shop Now" action button in the middle of the homepage to reach the store.
+
+![Site Content - Store](docs/testing_images/reach-store-page.png)
+
+Once they reach the store page, they can view a list of products for sale. The page is paginated to show 8 products at a time. They can move between sub-pages using the pagination navigation option at the bottom of the page. They can also add a product to their shopping bag from this page.
+
+![Site Content - Store](docs/testing_images/store-page.png)
+
+- *As a site user I can click on a product on the main Store page so that I can view extra information about the product.
+
+The user can click on either the product thumbnail or the product title on the product page to be taken to the product detail page. Once there, they can view extra details not visible on the product page, including the item condition and a full description. The option to Add to Cart is also present here, as is a "Back to All Products" button. 
+
+![Site Content - Store Detail](docs/testing_images/product-detail.png)
+
+- *As a site user I can browse the store by product category so that I can find music that's part of the genre I'm interested in.*
+
+The user can browse by either album format or music genre from the main site navigation.
+
+![Site Content - Category Nav](docs/testing_images/category-nav.png)
+
+- *As a Site User I can find the Terms & Conditions and Privacy Policy applicable to this store so that I can have a better understanding of how this store operates and handles my data.*
+
+The site user has access to these pages from the site footer.
+
+![Site Content - Footer Nav](docs/readme_images/terms-conditions.png)
+![Site Content - Footer Nav](docs/readme_images/privacy-policy.png)
+
+- *As a site user I can find out what the item condition grades mean so that I will know what to expect in terms of item quality when I receive it."
+
+The FAQ page in the site has information on this, and gives a detailed breakdown of what each condition grade means. This page is accessible from both the main navigation and the footer navigation.
+
+![Site Content - FAQ](docs/readme_images/faqs.png)
