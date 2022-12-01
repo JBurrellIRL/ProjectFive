@@ -386,3 +386,15 @@ During development, SQLite was used for the site database and for production, El
 ## Business Model
 
 JB's Record Store's Business Model is Business to Consumer (B2C). The products for sale in the store are sold directly by the store owner to consumers. A customer of JB's Record Store would most likely be someone who is interested in growing their own record collection, or is interested in browsing rare and hard-to-find items and finding their current market value.
+
+## Marketing
+
+### SEO
+
+For this store, keyword research was performed by analysing Google search results, checking competitor's keywords and by utilising wordtracker.com. The keywords most relevant to the store have been added to the site's meta-keywords and meta description. I also used recommended keywords in headings, site content, <strong></strong> tags and image alt-text across the site. 
+
+### Building Trust
+
+I included a Reviews section in the site, which a user can reach through the link provided in the site footer. Including a reviews/testimonials section helps to build trust with my audience. I also included both a Terms & Conditions page and a Privacy Policy page, which will help to reassure any potential customers that they're dealing with a reputable store that takes their privacy and user experience seriously.
+
+
