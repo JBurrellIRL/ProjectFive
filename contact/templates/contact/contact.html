@@ -2,6 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% block extra_title %}JB's Record Store | Contact{% endblock %}
+
 {% block content %}
 
 <div class="container">
@@ -12,7 +14,7 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{contact_form|crispy}}
-        <button class="btn btn-primary my-4" type="submit">Submit</button>
+        <button class="btn btn-warning my-4" type="submit">Submit</button>
     </form>
 
 </div>
