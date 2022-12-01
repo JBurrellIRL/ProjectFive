@@ -640,6 +640,7 @@ To clone this repository follow the below steps:
 - [ElephantSQL](https://www.elephantsql.com/) was used as the database for this project.
 - [SQLite](https://www.sqlite.org/index.html) - was used as the database during production.
 - [Stripe](https://stripe.com/ie) - the platform used to handle payments.
+- [Django Summernote](https://summernote.org/) - WYSIWYG text editor for product descriptions.
 - [AWS](https://aws.amazon.com/?nc2=h_lg) - used for file storage.
 - [Heroku](https://dashboard.heroku.com/login) - Cloud-based platform used for deployment of project.
 - [Google's Mobile Responsiveness Test](https://search.google.com/test/mobile-friendly) - Used to verify mobile responsivenenss of website.
@@ -669,5 +670,5 @@ To clone this repository follow the below steps:
 - [Django Docs](https://docs.djangoproject.com/en/3.2/)
 - [Bootstrap 5.0 Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Stack Overflow](https://stackoverflow.com/)
-- [Discogs](https://discogs.com) - The images for this site were sourced from Discogs. This site is for educational purposes only and no copyright infringement whatsoever is intended.
+- [Discogs](https://discogs.com) - A selection of the album information text for this site plus images were sourced from Discogs. This site is for educational purposes only and no copyright infringement whatsoever is intended.
 - [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)

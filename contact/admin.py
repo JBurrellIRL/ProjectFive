@@ -6,6 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 class ContactAdmin(admin.ModelAdmin):
+    """Allows site admin to manage customer messages in admin panel"""
     list_display = (
         'name',
         'email',
@@ -15,6 +16,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 class ContactNotesAdmin(SummernoteModelAdmin):
+    """Allows site admin to manage customer notes in admin panel"""
     summernote_fields = ('reply_sent')
     list_display = (
         'related_message',

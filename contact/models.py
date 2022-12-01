@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Contact(models.Model):
-
+    """Model for Contact form"""
     class Meta:
         verbose_name_plural = 'Contact Form Messages'
 

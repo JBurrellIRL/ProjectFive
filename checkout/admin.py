@@ -4,11 +4,13 @@ from django_summernote.admin import SummernoteModelAdmin
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """Allows site admin to manage order line items through admin panel"""
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """Allows site admin to manage orders through admin panel"""
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date',
@@ -29,6 +31,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 class OrderNotesAdmin(SummernoteModelAdmin):
+    """Allows site admin to manage order notes through admin panel"""
     summernote_fields = ('order_notes')
     list_display = (
         'related_order',

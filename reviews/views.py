@@ -16,7 +16,8 @@ def all_reviews(request):
     Renders the reviews page
     """
     reviews_list = (
-        Reviews.objects.all().filter(approved=True).order_by("-date"))
+        Reviews.objects.all().filter(
+            approved=True).order_by("-date"))
     return render(
         request,
         "reviews/reviews.html", {"reviews_list": reviews_list})
@@ -38,11 +39,13 @@ class AddReview(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class UpdateReview(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class UpdateReview(
+        LoginRequiredMixin, UserPassesTestMixin,
+        SuccessMessageMixin, UpdateView):
 
     def test_func(self):
         """
-        This validates that only the reviewer or the admin can edit their review.
+        This validates that only the reviewer or admin can edit their review.
         """
         if self.request.user.is_superuser:
             return True

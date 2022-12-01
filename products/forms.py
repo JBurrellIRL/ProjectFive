@@ -5,6 +5,7 @@ from django_summernote.widgets import SummernoteWidget
 
 
 class ProductForm(forms.ModelForm):
+    """Form for product management"""
 
     class Meta:
         model = Product

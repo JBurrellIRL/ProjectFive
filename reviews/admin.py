@@ -6,6 +6,7 @@ from .models import Reviews
 
 @admin.register(Reviews)
 class ReviewsAdmin(admin.ModelAdmin):
+    """Allows the site admin to manage reviews in the admin panel"""
     list_display = (
         'review_title',
         'date',

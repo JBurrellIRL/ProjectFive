@@ -5,7 +5,7 @@ from products.models import Product
 
 
 def bag_contents(request):
-
+    """Function to handle bag contents"""
     bag = request.session.get('bag', {})
 
     bag_items = []

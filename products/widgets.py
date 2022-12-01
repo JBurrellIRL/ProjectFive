@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CustomClearableFileInput(ClearableFileInput):
+    """To clear the existing image from product form"""
     clear_checkbox_label = _('Remove')
     initial_text = _('Current Image')
     input_text = _('')
