@@ -397,4 +397,277 @@ For this store, keyword research was performed by analysing Google search result
 
 I included a Reviews section in the site, which a user can reach through the link provided in the site footer. Including a reviews/testimonials section helps to build trust with my audience. I also included both a Terms & Conditions page and a Privacy Policy page, which will help to reassure any potential customers that they're dealing with a reputable store that takes their privacy and user experience seriously.
 
+### Social Media Marketing
 
+A Facebook business page has been created for organic social media marketing. The branding on the social media page matches the branding on the website, and the page can be used to share new content from the site so that people following the business through Facebook can be kept up-to-date on the current content for sale.
+
+### Email Newsletter Marketing
+
+Site visitors can sign up to a newsletter when visiting the site. Registering for an account is not needed for this. A signup box is visible in the lower section of the site homepage. The idea of the newsletter is to allow the site administrator to share store news and/or special offers with existing and potential customers via email. The newsletter function was created via Mailchimp.
+
+## Testing
+
+A dedicated testing document can be found [here](test-doc).
+
+# Deployment - Heroku
+
+This app was deployed to Heroku using the following steps:
+
+### Create the Heroku App:
+
+- Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
+- Click the button labelled New in the top right-hand corner and from the drop-down menu select "Create New App".
+- Enter a unique app name that fits your project.
+- Select your region.
+- Click on the Create App button.
+
+### Attach the ElephantSQL database:
+- Sign up for an [ElephantSQL](https://customer.elephantsql.com/signup) account.
+- Click on the "Create New Instance" option to the top right of the page.
+- Give your new instance a meaningful name, and select the "Tiny Turtle" plan option for a free database. Then, click on Select Region.
+- Choose a data centre that's nearest to your own location. Click on Review, followed by Create Instance.
+- Once your instance has been created, copy the database URL and add it to your Heroku project in the Settings tab, in the "Config Vars" section.
+
+### Connect the ElephantSQL database to your project project
+- Create an env.py file in the main directory of the project.
+- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file. 
+- Import the env.py file to the settings.py file and add the SECRETKEY and DATABASE_URL file paths.
+- Comment out the default database configuration.
+- Save files and make migrations.
+- Go back to your IDE and install 2 more requirements:
+    - `pip3 install dj_databse_url`
+    - `pip3 install psycopg2` 
+- Create requirements.txt file by typing `pip3 freeze --local > requirements.txt`
+- In settings.py file import dj_database_url, remove the default configuration within database settings and add the following: 
+
+```
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+```
+- Run migrations and create a superuser for the new database. 
+- Create an if statement in settings.py to run the postgres database when using the app on heroku or sqlite if not
+
+```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+    }
+```
+
+### Create files / directories
+- Create three directories in the main directory; media, static and templates.
+- Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
+
+### Update Heroku Config Vars
+Add the following Config Vars in Heroku:
+| Variable Name         | Value (Where to find this info)                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| AWS_ACCESS_KEY_ID     | AWS CSV                                                                         |
+| AWS_SECRET_ACCESS_KEY | AWS CSV                                                                         |
+| DATABASE_URL          | ElephantSQL                                                                     |
+| EMAIL_HOST_PASS       | Password from email account                                                     |
+| EMAIL_HOST_USER       | Your site email address                                                         |
+| SECRET_KEY            | Random key generated using https://miniwebtool.com/django-secret-key-generator/ |
+| STRIPE_PUBLIC_KEY     | Stripe Dashboard > Developers tab > API Keys > Publishable key                  |
+| STRIPE_SECRET_KEY     | Stripe Dashboard > Developers tab > API Keys > Secret key                       |
+| STRIPE_WH_SECRET      | Stripe Dashboard > Developers tab > Webhooks > site endpoint > Signing secret   |
+| USE_AWS               | True (When AWS setup is created)                                                |
+
+### Deploy
+- NB: Ensure in Django settings, DEBUG is False
+- Go to the Deploy tab on Heroku and connect to GitHub - make sure you select the correct repository. 
+- Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually.
+- Click View to view the deployed site.
+
+The site is now live and operational.
+
+## AWS Set Up
+### AWS S3 Bucket
+- Create an AWS account [here](https://portal.aws.amazon.com/billing/signup).
+- In the 'Services' tab on the AWS Management Console, search 'S3' and select it.
+- Click 'Create a new bucket', give it a name (it's preferable to match this to your Heroku app name), and choose the region closest to you.
+- Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket owner preferred.
+- Uncheck block all public access and tick to acknowledge that the bucket will be public.
+- Click 'Create bucket'.
+- Open the created bucket, go to the 'Properties' tab. Scroll to the bottom and under 'Static website hosting' click 'edit' and change the Static website hosting option to 'enabled'. Copy the default values for the index and error documents and click 'save changes'.
+- Open the 'Permissions' tab, locate the CORS configuration section and add the following code:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+- In the 'Bucket Policy' section and select 'Policy Generator'.
+- Choose 'S3 Bucket Policy' from the Type dropdown menu.
+- In 'Step 2: Add Statements', add the following settings:
+    - Effect: Allow
+    - Principal: *
+    - Actions: GetObject
+    - ARN: Bucket ARN (copy from S3 Bucket page)
+- Click 'Add Statement'.
+- Click 'Generate Policy'.
+- Copy the policy from the popup that appears
+- Paste the generated policy into the Permissions > Bucket Policy area.
+- Add '/*' at the end of the 'Resource' key, and save.
+- Go to the 'Access Control List' section click edit and enable List for Everyone (public access) and accept the warning box.
+
+
+### IAM
+- From the 'Services' menu, search IAM and select it.
+- Once on the IAM page, click 'User Groups' from the side bar, then click 'Create group'. Choose a name and click 'Create'.
+- Go to 'Policies', click 'Create New Policy'. Go to the 'JSON' tab and click 'Import Managed Policy'. 
+- Search 'S3' and select 'AmazonS3FullAccess'. Click 'Import'.
+- Get the bucket ARN from 'S3 Permissions' as per above.
+- Delete the '*' from the 'Resource' key and add the following code into the area:
+
+```
+"Resource": [
+    "Your ARN goes here/",
+    "Your ARN goes here/*"
+]
+```
+
+- Click 'Next Tags' > 'Next Review' and then provide a name and description and click 'Create Policy'.
+- Click'User Groups' and open the created group. Go to the 'Permissions' tab and click 'Add Permissions' and then 'Attach Policies'.
+- Search for the policy you created and click 'Add Permissions'.
+- You must create a user to put in the group. Select users from the sidebar and click 'Add user'.
+- Aaa a user name, check 'Programmatic Access'.
+- Click 'Next' and select the group you just created.
+- Keep clicking 'Next' until you reach the 'Create user' button and click that.
+- Download the CSV file which contains the AWS_SECRET_ACCESS_KEY and your AWS_ACCESS_KEY_ID needed in the Heroku variables (as noted in the chart above) as per above list and also in your env.py.
+
+
+### Connecting S3 to Django 
+- Go back to your IDE and install 2 more requirements:
+    - `pip3 install boto3`
+    - `pip3 install django-storages` 
+- Update your requirements.txt file by typing `pip3 freeze --local > requirements.txt` and add storages to your installed apps.
+- Create an if statement in settings.py 
+
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'insert-your-bucket-name-here'
+    AWS_S3_REGION_NAME = 'insert-your-region-here'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+```
+- Then add the line 
+
+    - `AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'` so that Django knows where our static files will be coming from in production.
+
+
+- Create a file called custom storages and import both our settings from django.con as well as the s3boto3 storage class from Django Storages. 
+- Create the following classes:
+
+```
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+
+- In settings.py add the following inside the if statement:
+
+```
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+```
+
+- Also, add the following at the top of the if statement:
+```
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+```
+
+- Go to S3, go to your bucket and click 'Create folder'. Name the folder 'media' and click 'Save'.
+- Inside the folder, click 'Upload', 'Add files', and then select all the images that you are using for your site.
+- Finally, under 'Permissions', select the option 'Grant public-read access' and click Upload.
+- Job done! Your static files and media files should now be linked from Django to your S3 bucket.
+
+## Forking this repository
+- Locate the repository at this link [JB's Record Store](https://github.com/JBurrellIRL/ProjectFive).
+- At the top of the repository, on the right side of the page, select "Fork" from the buttons available. 
+- A copy of the repository is now created.
+
+## Cloning this repository
+To clone this repository follow the below steps: 
+
+1. Locate the repository at this link [JB's Record Store](https://github.com/JBurrellIRL/ProjectFive). 
+2. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
+3. Open **Terminal**.
+4. In Terminal, change the current working directory to the desired location of the cloned directory.
+5. Type **'git clone'**, and then paste the URL copied from GitHub earlier. 
+6. Type **'Enter'** to create the local clone. 
+
+## Languages
+
+- Python
+- HTML5
+- CSS3
+- Javascript
+
+## Frameworks - Libraries - Programs Used during site development
+- [Django 3.2](https://www.djangoproject.com/): Main python framework used in the development of this project
+- [Django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html): authentication library used to create the user accounts
+- [JQuery](https://jquery.com/)
+- [ElephantSQL](https://www.elephantsql.com/) was used as the database for this project.
+- [SQLite](https://www.sqlite.org/index.html) - was used as the database during production.
+- [Stripe](https://stripe.com/ie) - the platform used to handle payments.
+- [AWS](https://aws.amazon.com/?nc2=h_lg) - used for file storage.
+- [Heroku](https://dashboard.heroku.com/login) - Cloud-based platform used for deployment of project.
+- [Google's Mobile Responsiveness Test](https://search.google.com/test/mobile-friendly) - Used to verify mobile responsivenenss of website.
+- [Am I Responsive](https://ui.dev/amiresponsive) - Mobile responsive test.
+- [Balsamiq](https://balsamiq.com/) - Used to generate Wireframe images.
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and tweaking, including testing responsiveness and performance.
+- [Font Awesome](https://fontawesome.com/) - Used for icons across the site.
+- [Bootstrap Icons](https://icons.getbootstrap.com/) - Used for icons on product page.
+- [GitHub](https://github.com/) - Used for version control and agile tool.
+- [Google Fonts](https://fonts.google.com/) - Used to import and alter fonts on the page.
+- [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
+- [Jshint](https://jshint.com/) - used to validate JavaScript.
+- [Coolors](https://coolors.co/) - Used for colour palette tests.
+- [Favicon](https://favicon.io/) - Used to create the favicon.
+- [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design.
+- [Grammerly](https://app.grammarly.com/) - used to proof read the README.md.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used with Django Forms.
+- [Bootstrap 5](https://getbootstrap.com/docs/4.6/getting-started/introduction/): CSS Framework for responsiveness and site styling.
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables): Used to convert Excel CSV tables to markdown.
+- [Sitemap Generator](www.xml-sitemaps.com): used to create sitemap.xml .
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/): Used to create the site's privacy policy.
+- [Terms & Conditions Generator](https://www.termsandconditionsgenerator.com/)): Used to create the site's terms & conditions.
+- [Mailchimp](https://mailchimp.com/?currency=EUR): Used to create the newsletter signup functionality.
+
+## Credits
+
+- [Django Docs](https://docs.djangoproject.com/en/3.2/)
+- [Bootstrap 5.0 Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [Discogs](https://discogs.com) - The images for this site were sourced from Discogs. This site is for educational purposes only and no copyright infringement whatsoever is intended.
+- [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
