@@ -151,7 +151,7 @@ Once the order is completed, the shopper will see an order confirmation screen t
 
 An order confirmation is sent out from the store administrator email account to the email address added to the order at checkout.
 
-![eCommerce - order-confirmation](docs/testing_images/email-confirmation.png)
+![eCommerce - email-confirmation](docs/testing_images/email-confirmation.png)
 
 ### EPIC 5: User accounts & Profile
 
@@ -159,8 +159,31 @@ An order confirmation is sent out from the store administrator email account to 
 
 The visitor to the site can register for an account using the "Register" option in the main navigation bar. An option to create an account also exists at checkout.
 
-![eCommerce - order-confirmation](docs/testing_images/register.png)
+![Accounts - register](docs/testing_images/register.png)
 
 - *As a site user I can verify my site membership through an email confirmation so that I can provide extra approval for my site membership.*
+
+After signing up with an email address, username and password, the user will receive an email to the email address they provided, asking them to click the link to confirm their membership. This decreases the likelihood of spam accounts being created on the site, and also increases the security of the user themselves, as they can lower the risk of being subscribed to a site that they didn't agree to.
+
+![Accounts - confirm membership](docs/testing_images/confirm-account.png)
+
+- *As a registered site user I can log in or log out of my account as appropriate so that I can access my user account as required.*
+
+The user can log in and out of their account from the main navigation bar. If logged out, an option will exist to either register or log in. If already logged in, the registration option disappears and a "Logout" option appears the user account dropdown menu.
+
+![Accounts - log in-out](docs/readme_images/nav-logged-out.png)
+![Accounts - log in-out](docs/readme_images/nav-logged-in.png)
+
+- *As a site user I can recover or reset my password so that I can gain access to the logged-in features if I have forgotten my login details.*
+
+An option exists for the user to reset their password if they have forgotten it. This option is visible on the login screen, and also on the registration page. Clicking on this option will take them to the password recovery page.
+
+![Accounts - password-recovery](docs/testing_images/password-reset.png)
+
+- *As a Site User I can view and update my registered shipping address and view previous orders so that I can ensure that my shipping address is correct and view information relating to previous orders.*
+
+The logged-in user can access their profile through the user account dropdown menu in the main navigation. Here, they can update their registered shipping address and view their previous orders. There's also an option to change their login password if they wish to do that.
+
+![Accounts - password-recovery](docs/readme_images/)
 
 

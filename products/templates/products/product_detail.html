@@ -55,7 +55,7 @@
                         data-bs-target="#delete-product{{ product.id }}" aria-label="Delete">Delete Product</button>
                 </div>
                 {% endif %}
-                <hr />
+                <hr>
                 <h5 class="card-meta">Price: €{{ product.price }}</h5>
                 <form method="POST" action="{% url 'add_to_bag' product.id %}">
                     {% csrf_token %}
@@ -71,7 +71,7 @@
     </div>
     <div class="container">
         <hr>
-        <p class="text-center">{{ product.description|safe }}</p>
+        {{ product.description|safe }}
         <hr>
         <a href="{% url 'products' %}" class="btn btn-success">
             <span class="icon">
