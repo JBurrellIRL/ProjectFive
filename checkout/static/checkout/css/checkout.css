@@ -78,3 +78,7 @@ select option[value=''] {
     margin: 0;
     height: 100%;
 }
+
+p.order-confirm-item {
+    text-align: left;
+}

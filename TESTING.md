@@ -76,6 +76,10 @@ The site user has access to the main site navigation and footer navigation on al
 ![Site Content - Main Nav](docs/readme_images/navigation.png)
 ![Site Content - Footer Nav](docs/readme_images/footer.png)
 
+- *As a site user I can immediately understand the purpose of the site so that I can learn information about the website.*
+
+This user story is covered by the general site content, which has been worked on throughout the project. The site is clearly structured, from the site title to the text and image content on the site, and its purpose is clear from all aspects. 
+
 - *As a site user I can view a list of products so that I can select a product that I'm interested in, to view or purchase.*
 
 The site user can browse a list of products for sale from the main navigation. By clicking into either the "genre" or "format" dropdown menus, they can click to view All Products. They can also click on the "Shop Now" action button in the middle of the homepage to reach the store.
@@ -86,7 +90,7 @@ Once they reach the store page, they can view a list of products for sale. The p
 
 ![Site Content - Store](docs/testing_images/store-page.png)
 
-- *As a site user I can click on a product on the main Store page so that I can view extra information about the product.
+- *As a site user I can click on a product on the main Store page so that I can view extra information about the product.*
 
 The user can click on either the product thumbnail or the product title on the product page to be taken to the product detail page. Once there, they can view extra details not visible on the product page, including the item condition and a full description. The option to Add to Cart is also present here, as is a "Back to All Products" button. 
 
@@ -110,3 +114,53 @@ The site user has access to these pages from the site footer.
 The FAQ page in the site has information on this, and gives a detailed breakdown of what each condition grade means. This page is accessible from both the main navigation and the footer navigation.
 
 ![Site Content - FAQ](docs/readme_images/faqs.png)
+
+### EPIC 4: eCommerce Functionality
+
+- *As a site user I can add products to my shopping bag so that I can purchase them when ready.*
+
+The site user has the option to add a chosen product to their cart from both the main store page and the product detail page. Once they add an item to their cart, they receive a browser message to let them know that the product has been added successfully to their cart.
+
+![eCommerce - add-to-cart](docs/testing_images/add-to-cart.png)
+
+- *As a site user I can view the contents of the shopping bag at any stage so that I can see the contents along with the current total cost.*
+
+The site user can click on the Cart icon in the site header at any time, which takes them to the Shopping Bag page. Here, they can view all the products within the shopping bag at that particular time. The page also gives them a running total of their order, including order total, applicable shipping costs and amount to pay.
+
+![eCommerce - bag](docs/readme_images/shopping-cart.png)
+
+- *As a site user I can enter my payment details at checkout so that I can purchase the items in my shopping bag.*
+
+After proceeding from the bag to the checkout, the customer can enter their card details securely in order to complete their purchase. The payment widget is embedded from Stripe, and takes care of the site payments. While the payment is being processed, the user will see a spinning wheel, indicating that the transaction is being processed. This should also discourage them from navigating away before the order is confirmed.
+
+![eCommerce - checkout](docs/testing_images/checkout-page.png)
+
+- *As a Site User I can purchase without registering, so that I can buy something without having to register for an account.*
+
+No registration is required for a buy to be able to make a purchase from the site. The buyer can proceed through the checkout process without needing an account - they do, however, receive an option to create an account on the checkout page. 
+
+![eCommerce - guest-checkout](docs/testing_images/create-account.png)
+
+- *As a Site User I can view a detailed order confirmation after checkout so that I can see all the details of the order I've placed.*
+
+Once the order is completed, the shopper will see an order confirmation screen that details their order in full. They can also see this confirmation screen for previous orders from their user profile page.
+
+![eCommerce - order-confirmation](docs/testing_images/order-confirmation.png)
+
+- *As a site user I can receive an email to confirm my order so that I have a personal copy of the order that I've placed.*
+
+An order confirmation is sent out from the store administrator email account to the email address added to the order at checkout.
+
+![eCommerce - order-confirmation](docs/testing_images/email-confirmation.png)
+
+### EPIC 5: User accounts & Profile
+
+- *As a new site user I can create an account so that I can be a registered user.*
+
+The visitor to the site can register for an account using the "Register" option in the main navigation bar. An option to create an account also exists at checkout.
+
+![eCommerce - order-confirmation](docs/testing_images/register.png)
+
+- *As a site user I can verify my site membership through an email confirmation so that I can provide extra approval for my site membership.*
+
+

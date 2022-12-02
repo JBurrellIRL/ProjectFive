@@ -113,7 +113,7 @@ def edit_product(request, product_id):
     else:
         form = ProductForm(instance=product)
         messages.info(
-            request, f'You are editing {product.name} - {product.artist}')
+            request, f'You are editing: {product.name} - {product.artist}')
 
     template = 'products/edit_product.html'
     context = {
