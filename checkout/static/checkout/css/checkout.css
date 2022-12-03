@@ -41,11 +41,6 @@ select option[value=''] {
     color: #aab7c4 !important;
 }
 
-/* .fieldset-label {
-    position: relative;
-    right: .5rem;
-} */
-
 #payment-form .form-control,
 #card-element {
     color: #5f646b;

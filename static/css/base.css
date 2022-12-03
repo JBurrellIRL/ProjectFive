@@ -15,6 +15,19 @@ body {
     width: 90%;
 }
 
+div.logo-box {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/static/images/alt-home-image.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 30vw;
+
+}
+
 /* Navigation  */
 
 .navbar {
@@ -62,12 +75,6 @@ a.btn-success {
 .image-container {
     border: solid 1px #6B7177;
 }
-
-/* .card {
-    margin: 20px 20px;
-    border: solid 2px;
-    color: #6B7177;
-} */
 
 .card-title {
     font-size: 20px;
@@ -170,7 +177,6 @@ i.fa-2x {
 }
 
 input {
-    /* width: 100%; */
     font-family: 'Roboto', sans-serif;
 }
 
@@ -187,10 +193,6 @@ textarea {
 a.btn {
     font-family: 'Roboto', sans-serif;
 }
-
-/* a.btn-outline-black {
-    padding-left: 0px !important;
-} */
 
 .img-fluid {
     align-items: center;
@@ -273,29 +275,7 @@ i.social-icons {
     border-radius: 0;
 }
 
-/* Login page  */
-
-
-.login #id_remember {
-    width: 20px;
-    display: inline;
-}
-
-.authentication-username {
-    text-transform: lowercase;
-}
-
-.fa-star {
-    color: #f5ce42 !important;
-}
-
-/* Reviews */
-
-.review-container {
-    padding-left: 0px !important;
-}
-
-/* Register and Login page styling  */
+/* Allauth pages  */
 
 .signup input,
 .login input {
@@ -315,6 +295,19 @@ p.sign-out {
     text-align: center;
     color: #212529;
     /* font-weight: bold; */
+}
+
+.login #id_remember {
+    width: 20px;
+    display: inline;
+}
+
+.authentication-username {
+    text-transform: lowercase;
+}
+
+.fa-star {
+    color: #f5ce42 !important;
 }
 
 .allauth-form-content label:not([for='id_remember']) {
@@ -339,6 +332,12 @@ p.sign-out {
     text-transform: lowercase;
 }
 
+/* Reviews */
+
+.review-container {
+    padding-left: 0px !important;
+}
+
 /* Media queries  */
 
 @media screen and (max-width: 992px) {
@@ -354,5 +353,12 @@ p.sign-out {
 
     .review-contents {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    div.logo-box {
+        min-height: 40vw;
+        min-width: 80vw;
     }
 }

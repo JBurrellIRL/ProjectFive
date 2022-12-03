@@ -184,6 +184,63 @@ An option exists for the user to reset their password if they have forgotten it.
 
 The logged-in user can access their profile through the user account dropdown menu in the main navigation. Here, they can update their registered shipping address and view their previous orders. There's also an option to change their login password if they wish to do that.
 
-![Accounts - password-recovery](docs/readme_images/)
+![Accounts - password-recovery](docs/testing_images/myprofile.png)
+
+## Code Validation
+
+### HTML
+
+The following results were seen when passing my code through the [W3C HTML Validator](https://validator.w3.org/):
+
+| Page               | Logged Out | Logged In |
+|--------------------|------------|-----------|
+| Home               | No errors  | No errors |
+| Products           | No errors  | No errors |
+| Product Detail     | No errors  | No errors |
+| Add Product        | N/A        | Note      |
+| Edit Product       | N/A        | Note      |
+| Bag                | No errors  | No errors |
+| Checkout           | No errors  | No errors |
+| Checkout Success   | No errors  | No errors |
+| Profile Page       | N/A        | No errors |
+| FAQs               | No errors  | No errors |
+| Privacy Policy     | No errors  | No errors |
+| Terms & Conditions | No errors  | No errors |
+| Reviews            | No errors  | No errors |
+| Add Review         | No errors  | No errors |
+| Edit Review        | No errors  | No errors |
+| Contact            | No errors  | No errors |
+| Sign In            | No errors  | N/A       |
+| Register           | No errors  | N/A       |
+| Sign Out           | N/A        | No errors |
+| Password Reset     | No errors  | N/A       |
+| Password Change    | N/A        | No errors |
+| 404 Error Page     | No errors  | No errors |
+| 403 Error Page     | No errors  | No errors |
+
+NOTE: The Add Products and Edit Products pages include some validation errors caused by the Summernote WYSIWYG text editor. These are outside of my control.
+
+![Validation - summernote](docs/testing_images/html-summernote.png)
+
+Also, forms that include an image upload field return this error in the HTML validator. This is to do with the image upload widget, and changing this breaks the field entirely.
+
+![Validation - formfield](docs/testing_images/form-val-error.png)
+
+### CSS
+
+No errors were returned when passing my CSS through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+*base.css*
+![Validation - base-css](docs/testing_images/base-css.png)
 
 
+*checkout.css*
+![Validation - checkout-css](docs/testing_images/checkout-css.png)
+
+
+*profile.css*
+![Validation - checkout-css](docs/testing_images/profiles-css.png)
+
+### Python
+
+I used the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided by Code Institute for my Python testing. No errors were returned, apart from some line-length errors in my settings.py file, where are auto-generated.
