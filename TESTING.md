@@ -249,5 +249,30 @@ I used the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided by Co
 
 No JavaScript errors were returned when testing in the [JSHint](https://jshint.com/) validator.
 
+## Lighthouse Testing
 
+The Lighthouse test in Chrome Developer Tools was run on all pages to check performance and accessibility. The below scores were achieved:
+
+| Page             | Performance | Accessibility | Best Practices | SEO |
+|------------------|-------------|---------------|----------------|-----|
+| Home             | 92          | 98            | 100            | 100 |
+| Products         | 91          | 98            | 100            | 100 |
+| Product Detail   | 98          | 98            | 100            | 100 |
+| Contact          | 95          | 98            | 100            | 100 |
+| FAQ              | 95          | 98            | 100            | 100 |
+| T&C              | 98          | 98            | 100            | 100 |
+| Privacy Policy   | 98          | 98            | 100            | 100 |
+| Add Product      | 98          | 90            | 100            | 100 |
+| Edit Product     | 98          | 91            | 100            | 100 |
+| Bag              | 91          | 98            | 100            | 100 |
+| Checkout         | 92          | 95            | 100            | 100 |
+| Checkout Success | 98          | 98            | 100            | 100 |
+| Reviews          | 97          | 98            | 100            | 100 |
+| Add Review       | 96          | 91            | 100            | 100 |
+| Edit Review      | 95          | 91            | 100            | 100 |
+| Sign In          | 95          | 98            | 100            | 100 |
+| Sign Out         | 98          | 98            | 100            | 100 |
+| Register         | 96          | 98            | 100            | 100 |
+| Password Reset   | 96          | 98            | 100            | 100 |
+| Change Password  | 96          | 98            | 100            | 100 |
 

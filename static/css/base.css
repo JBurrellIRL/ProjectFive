@@ -34,6 +34,10 @@ div.logo-box {
     background-color: #e31f25 !important;
 }
 
+.dropdown-menu li {
+    font-family: 'Oswald', sans-serif;
+}
+
 .nav-item {
     font-family: "Oswald", sans-serif;
     font-weight: 500;
@@ -330,6 +334,12 @@ p.sign-out {
 
 .authentication-username {
     text-transform: lowercase;
+}
+
+/* Terms & Conditions page  */
+
+li {
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Reviews */

@@ -21,7 +21,7 @@
                 {% if field.name != 'image' %}
                 {{ field | as_crispy_field }}
                 {% else %}
-                {{ field|safe }}
+                {{ field }}
                 {% endif %}
                 {% endfor %}
                 <div class="text-right">

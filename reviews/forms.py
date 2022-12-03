@@ -6,6 +6,7 @@ class ReviewsForm(forms.ModelForm):
     """
     Creates form for customer reviews
     """
+    image = forms.ImageField(label='Image')
 
     class Meta:
         model = Reviews
