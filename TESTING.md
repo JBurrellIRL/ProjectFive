@@ -244,3 +244,10 @@ No errors were returned when passing my CSS through the [W3C CSS Validator](http
 ### Python
 
 I used the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided by Code Institute for my Python testing. No errors were returned, apart from some line-length errors in my settings.py file, where are auto-generated.
+
+### JavaScript
+
+No JavaScript errors were returned when testing in the [JSHint](https://jshint.com/) validator.
+
+
+

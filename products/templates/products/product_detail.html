@@ -8,14 +8,10 @@
             <div class="d-sm-block col-lg-6">
                 <div class="image-container">
                     {% if product.image %}
-                    <a href="">
-                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     {% else %}
-                    <a href="">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}il_fullxfull.2465788740_kimi.jpg"
-                            alt="{{ product.name }}">
-                    </a>
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}il_fullxfull.2465788740_kimi.jpg"
+                        alt="{{ product.name }}">
                     {% endif %}
                 </div>
             </div>
