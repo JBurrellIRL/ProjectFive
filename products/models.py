@@ -1,10 +1,17 @@
 from django.db import models
 
 
-class Format(models.Model):
-    """Model for 'format' category '"""
+class CommonFields(models.Model):
+    """Abstract Model for common fields"""
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+
+    class Meta:
+        abstract = True
+
+
+class Format(CommonFields):
+    """Model for 'format' category '"""
 
     class Meta:
         """Correct spelling in admin panel"""
@@ -17,10 +24,8 @@ class Format(models.Model):
         return self.friendly_name
 
 
-class Genre(models.Model):
+class Genre(CommonFields):
     """Model for 'genre' category '"""
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
     class Meta:
         """Correct spelling in admin panel"""
