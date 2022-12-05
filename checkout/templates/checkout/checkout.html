@@ -142,6 +142,35 @@
 {% endblock %}
 
 {% block postloadjs %}
+<!-- Script to return custom error messages to user on invalid form submit  -->
+<script>
+    $(function () {
+        $("input[name=full_name]")[0].oninvalid = function () {
+            this.setCustomValidity("Please only use letters in this field.");
+        };
+        $("input[name=full_name]")[0].oninput = function () {
+            this.setCustomValidity("");
+        };
+        $("input[name=street_address1]")[0].oninvalid = function () {
+            this.setCustomValidity("Please check for blank spaces at the start of your address.");
+        };
+        $("input[name=street_address1]")[0].oninput = function () {
+            this.setCustomValidity("");
+        };
+        $("input[name=town_or_city]")[0].oninvalid = function () {
+            this.setCustomValidity("Please only use letters in this field.");
+        };
+        $("input[name=town_or_city]")[0].oninput = function () {
+            this.setCustomValidity("");
+        };
+        $("input[name=phone_number]")[0].oninvalid = function () {
+            this.setCustomValidity("Phone number must be between 8 and 15 characters.");
+        };
+        $("input[name=phone_number]")[0].oninput = function () {
+            this.setCustomValidity("");
+        };
+    });
+</script>
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}

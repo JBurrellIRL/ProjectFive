@@ -264,6 +264,10 @@ i.social-icons {
     margin-left: 5%;
 }
 
+.product-description {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Product form  */
 
 .btn-file {

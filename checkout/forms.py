@@ -38,3 +38,13 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+        # To set the required number
+        self.fields['phone_number'].widget.attrs[
+            'pattern'] = "[0-9]{8,20}"
+        # To disallow whitespace in the name field
+        self.fields['full_name'].widget.attrs[
+            'pattern'] = "([^\\s][A-z-\\s]+)"
+        self.fields['street_address1'].widget.attrs[
+            'pattern'] = "([^\\s][A-z0-9-\\s]+)"
+        self.fields['town_or_city'].widget.attrs[
+            'pattern'] = "([^\\s][A-z-\\s]+)"

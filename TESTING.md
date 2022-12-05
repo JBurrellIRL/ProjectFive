@@ -338,6 +338,7 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | My Profile link    | Click   | Opens user profile page                            | Pass      |
 | Add product link   | Click   | Opens Add Product page                             | Pass      |
 | Logout             | Click   | Opens logout page                                  | Pass      |
+
 ### Home Page
 
 | Element          | Action   | Expected Result                            | Pass/Fail |
@@ -346,5 +347,22 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Newsletter Block | Interact | Accept email address and show confirmation | Pass      |
 
 ### Store Page
+
+| Element            | Action  | Expected Outcome                                                | Pass/Fail |
+|--------------------|---------|-----------------------------------------------------------------|-----------|
+| Product            | Display | Display thumbnail image, title, artist, format, genre and price | Pass      |
+| Product            | Display | Display products in a random order on page load                 | Pass      |
+| Thumbnail          | Click   | z                                                               | Pass      |
+| Product Title      | Click   | Open product detail page                                        | Pass      |
+| Add To Cart        | Click   | Adds item to cart                                               | Pass      |
+| Add to Cart        | Click   | Updates running total in cart icon in header                    | Pass      |
+| Edit button        | Display | Should only be visible to store admin                           | Pass      |
+| Delete button      | Display | Should only be visible to store admin                           | Pass      |
+| Edit button        | Click   | Opens Edit Product page                                         | Pass      |
+| Delete button      | Click   | Opens Delete Product page                                       | Pass      |
+| Page pagination    | Display | Page should only show 8 products at once                        | Pass      |
+| Pagination buttons | Click   | Takes user back and forth between sub-pages                     | Pass      |
+
+### Product Detail page
 
 

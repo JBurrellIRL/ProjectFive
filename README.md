@@ -664,6 +664,7 @@ To clone this repository follow the below steps:
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/): Used to create the site's privacy policy.
 - [Terms & Conditions Generator](https://www.termsandconditionsgenerator.com/)): Used to create the site's terms & conditions.
 - [Mailchimp](https://mailchimp.com/?currency=EUR): Used to create the newsletter signup functionality.
+- [RegExr](https://regexr.com/): Used this to learn about and reference regular expressions.
 
 ## Credits
 
