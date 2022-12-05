@@ -108,7 +108,7 @@
     </div>
 
 </div>
-
+<!-- Page pagination  -->
 <div class="container">
     <div class="d-flex justify-content-center">
         <div>
@@ -116,14 +116,11 @@
                 {% if products.has_previous %}
                 <a href="?page={{ products.previous_page_number }}" class="btn btn-danger">Previous</a>
                 {% endif %}
-
-
                 {% if products.has_previous or products.has_next %}
                 <span class="current-page">
                     Page {{ products.number }} of {{ products.paginator.num_pages }}
                 </span>
                 {% endif %}
-
                 {% if products.has_next %}
                 <a href="?page={{ products.next_page_number }}" class="btn btn-danger">Next</a>
                 {% endif %}

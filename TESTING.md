@@ -276,3 +276,75 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Password Reset   | 96          | 98            | 100            | 100 |
 | Change Password  | 96          | 98            | 100            | 100 |
 
+## Manual Testing
+
+### Site Navigation
+
+**Desktop**
+
+| Element            | Action  | Expected Outcome                                   | Pass/Fail |
+|--------------------|---------|----------------------------------------------------|-----------|
+| Navigation Bar     |         |                                                    |           |
+| Navigation Links   | Hover   | Font darkens on hover                              | Pass      |
+| Site Title         | Click   | Returns to homepage                                | Pass      |
+| Home link          | Click   | Returns to homepage                                | Pass      |
+| By Format          | Click   | Opens dropdown menu                                | Pass      |
+| All Products       | Click   | Return all products in the store                   | Pass      |
+| Format options     | Click   | Return only items tagged with that format          | Pass      |
+| By Genre           | Click   | Opens dropdown menu                                | Pass      |
+| All Products       | Click   | Return all products in the store                   | Pass      |
+| Genre options      | Click   | Return only items tagged with that genre           | Pass      |
+| Contact            | Click   | Opens Contact page                                 | Pass      |
+| FAQ’s              | Click   | Opens FAQs page                                    | Pass      |
+| Register           | Click   | Opens signup page                                  | Pass      |
+| Login              | Click   | Opens login page                                   | Pass      |
+| Cart icon          | Display | Should show running total of customer order        | Pass      |
+| Register           | Display | Should not appear if user is logged in             | Pass      |
+| Login              | Display | Should not appear if user is logged in             | Pass      |
+| User dropdown menu | Display | Should show name of user                           | Pass      |
+| User dropdown menu | Click   | Opens dropdown menu                                | Pass      |
+| User dropdown menu | Display | Should show profile option and option to log out   | Pass      |
+| User dropdown menu | Display | Should allow only the store admin to add a product | Pass      |
+| My Profile link    | Click   | Opens user profile page                            | Pass      |
+| Add product link   | Click   | Opens Add Product page                             | Pass      |
+| Logout             | Click   | Opens logout page                                  | Pass      |
+
+**Mobile**
+
+| Element            | Action  | Expected Outcome                                   | Pass/Fail |
+|--------------------|---------|----------------------------------------------------|-----------|
+| Navigation Bar     |         |                                                    |           |
+| Hamburger Menu     | Display | Appear at 992px breakpoint                         | Pass      |
+| Hamburger Menu     | Tap     | Displays navigation items                          | Pass      |
+| Site Title         | Tap     | Returns to homepage                                | Pass      |
+| Home link          | Tap     | Returns to homepage                                | Pass      |
+| By Format          | Tap     | Opens and closes dropdown menu                     | Pass      |
+| All Products       | Tap     | Return all products in the store                   | Pass      |
+| Format options     | Tap     | Return only items tagged with that format          | Pass      |
+| By Genre           | Tap     | Opens and closes dropdown menu                     | Pass      |
+| All Products       | Tap     | Return all products in the store                   | Pass      |
+| Genre options      | Tap     | Return only items tagged with that genre           | Pass      |
+| Contact            | Tap     | Opens Contact page                                 | Pass      |
+| FAQ’s              | Tap     | Opens FAQs page                                    | Pass      |
+| Register           | Tap     | Opens signup page                                  | Pass      |
+| Login              | Tap     | Opens login page                                   | Pass      |
+| Cart icon          | Display | Should show running total of customer order        | Pass      |
+| Register           | Display | Should not appear if user is logged in             | Pass      |
+| Login              | Display | Should not appear if user is logged in             | Pass      |
+| User dropdown menu | Display | Should show name of user                           | Pass      |
+| User dropdown menu | Click   | Opens dropdown menu                                | Pass      |
+| User dropdown menu | Display | Should show profile option and option to log out   | Pass      |
+| User dropdown menu | Display | Should allow only the store admin to add a product | Pass      |
+| My Profile link    | Click   | Opens user profile page                            | Pass      |
+| Add product link   | Click   | Opens Add Product page                             | Pass      |
+| Logout             | Click   | Opens logout page                                  | Pass      |
+### Home Page
+
+| Element          | Action   | Expected Result                            | Pass/Fail |
+|------------------|----------|--------------------------------------------|-----------|
+| Shop Now button  | Click    | Open Store page                            | Pass      |
+| Newsletter Block | Interact | Accept email address and show confirmation | Pass      |
+
+### Store Page
+
+

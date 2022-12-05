@@ -34,6 +34,10 @@ div.logo-box {
     background-color: #e31f25 !important;
 }
 
+.navbar a:hover {
+    color: #ebe9e4 !important;
+}
+
 .dropdown-menu li {
     font-family: 'Oswald', sans-serif;
 }
@@ -45,6 +49,10 @@ div.logo-box {
 
 .navbar-toggler {
     border-color: #e6e2da !important;
+}
+
+.user-icon {
+    padding-right: 5px;
 }
 
 /* Fonts  */
@@ -178,6 +186,11 @@ i.fa-2x {
     font-size: 34px;
     text-align: center;
     color: #fff;
+}
+
+#mc_embed_signup #mce-success-response {
+    color: white;
+    font-size: 18px;
 }
 
 input {
