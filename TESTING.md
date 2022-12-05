@@ -365,4 +365,122 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 
 ### Product Detail page
 
+| Element                  | Action  | Expected Outcome                                                                | Pass/Fail |
+|--------------------------|---------|---------------------------------------------------------------------------------|-----------|
+| Product content          | Display | Display details about the product, extended description plus Add to Cart button | Pass      |
+| Edit button              | Display | Should only be visible to store admin                                           | Pass      |
+| Delete button            | Display | Should only be visible to store admin                                           | Pass      |
+| Edit button              | Click   | Opens Edit Product page                                                         | Pass      |
+| Delete button            | Click   | Opens Delete Product page                                                       | Pass      |
+| Add To Cart              | Click   | Adds item to cart                                                               | Pass      |
+| Add to Cart              | Click   | Updates running total in cart icon in header                                    | Pass      |
+| Continue Shopping button | Click   | Opens all products page                                                         | Pass      |
+
+### Shopping Bag page
+
+| Element                     | Action  | Expected Outcome                                                                   | Pass/Fail |
+|-----------------------------|---------|------------------------------------------------------------------------------------|-----------|
+| Bag page                    | Display | Show all items currently in the bag                                                | Pass      |
+| Bag page                    | Display | Allow customer to remove items from bag                                            | Pass      |
+| Bag page                    | Display | Alert customer to free shipping threshold                                          | Pass      |
+| Bag page                    | Display | Keep Shopping button                                                               | Pass      |
+| Bag page                    | Display | Continue to Checkout button                                                        | Pass      |
+| Bag page                    | Display | Show order running total, shipping cost and grand total                            | Pass      |
+| Keep Shopping button        | Click   | Opens All Products page                                                            | Pass      |
+| Continue to Checkout button | Click   | Open Checkout page                                                                 | Pass      |
+| Remove button               | Click   | Remove item from bag and update totals                                             | Pass      |
+| Remove button               | Click   | Alert message appears to confirm item removal                                      | Pass      |
+| Bag page                    | Display | When empty, only show “continue shopping” button plus message stating bag is empty | Pass      |
+
+### Store Checkout
+
+| Element                    | Action                     | Expected Outcome                                             | Pass/Fail |
+|----------------------------|----------------------------|--------------------------------------------------------------|-----------|
+| Checkout page              | Direct URL                 | With items in bag – go to checkout page                      | Pass      |
+| Checkout page              | Direct URL                 | Bag empty – redirect to store page with message              | Pass      |
+| Form fields                | On page load               | If logged in – fields populated from user profile (if saved) | Pass      |
+| Form fields                | On page load               | If logged out or if profile not saved – blank fields         | Pass      |
+| Required Text input fields | Leave empty                | Browser error, form doesn’t submit                           | Pass      |
+| Required Text input fields | Whitespace                 | Browser error, form doesn’t submit                           | Pass      |
+| Required Text input fields | Filled in correctly        | Form submits                                                 | Pass      |
+| Phone number field         | Leave empty                | Browser error, form doesn’t submit                           | Pass      |
+| Phone number field         | Whitespace                 | Browser error, form doesn’t submit                           | Pass      |
+| Phone number field         | Add non-numeric characters | Browser error, form doesn’t submit                           | Pass      |
+| Phone number field         | Filled in correctly        | Form submits                                                 | Pass      |
+| Email field                | Leave empty                | Browser error, form doesn’t submit                           | Pass      |
+| Email field                | Whitespace                 | Browser error, form doesn’t submit                           | Pass      |
+| Email field                | Add a non-email address    | Browser error, form doesn’t submit                           | Pass      |
+| Email field                | Filled in correctly        | Form submits                                                 | Pass      |
+| Country field dropdown     | Click                      | Show dropdown options                                        | Pass      |
+| Save to profile checkbox   | On page load – logged in   | Shown to user                                                | Pass      |
+| Save to profile checkbox   | On page load – logged out  | Not shown to user                                            | Pass      |
+| Save to profile checkbox   | Box checked                | On submit, details saved to user profile                     | Pass      |
+| Save to profile checkbox   | Box unchecked              | On submit, details not saved to profile                      | Pass      |
+| Card input field           | Invalid card number input  | Error message on field                                       | Pass      |
+| Card input field           | Invalid card date input    | Error message on field                                       | Pass      |
+| Card input field           | Details all valid          | Purchase completed                                           | Pass      |
+| Adjust Bag button          | Click                      | Return to Bag page                                           | Pass      |
+| Complete Order button      | Click – form invalid       | Error message appears on invalid fields                      | Pass      |
+| Complete Order button      | Click – form valid         | Loading screen appears                                       | Pass      |
+| Complete Order button      | Click – form valid         | Form submits                                                 | Pass      |
+| Complete Order button      | Click – form valid         | Redirect to order confirmation page                          | Pass      |
+| Complete Order button      | Click – form valid         | Order saved to customer profile                              | Pass      |
+|                            |                            |                                                              |           |
+| Checkout Success page      |                            |                                                              |           |
+| Order confirmation         | Display                    | Display the correct order details                            | Pass      |
+
+### Reviews
+
+**Reviews Page**
+
+| Element                        | Action  | Expected Outcome                                                      | Pass/Fail |
+|--------------------------------|---------|-----------------------------------------------------------------------|-----------|
+| Reviews page                   | Display | Display a list of approved customer reviews                           | Pass      |
+| Reviews page – user logged out | Display | Show a list of previous customer reviews                              | Pass      |
+| Reviews page – user logged out | Display | Display a message saying that you must be logged in to leave a review | Pass      |
+| Reviews page – user logged in  | Display | Option to leave a review                                              | Pass      |
+| Reviews page – user logged in  | Display | Option to edit existing review left by the user                       | Pass      |
+| Reviews page – user logged in  | Display | Option to delete existing review left by the user                     | Pass      |
+| Leave A Review button          | Click   | Open Add Review page                                                  | Pass      |
+| Edit button                    | Display | Only available on reviews left by the logged-in user                  | Pass      |
+| Delete button                  | Display | Only available on reviews left by the logged-in user                  | Pass      |
+| Edit button                    | Click   | Open Edit Review page                                                 | Pass      |
+| Delete button                  | Click   | Trigger Delete Review modal                                           | Pass      |
+
+**Add Review page**
+
+| Element         | Action  | Expected Outcome                                              | Pass/Fail |
+|-----------------|---------|---------------------------------------------------------------|-----------|
+| Add Review page | Display | Display logged-in user                                        | Pass      |
+| Add Review page | Display | Form to add review, image, rating and review title            | Pass      |
+| Use direct URL  | Link    | Logged in – open Add Review Page                              | Pass      |
+| Use direct URL  | Link    | Logged out – return to Sign In page                           | Pass      |
+| Submit button   | Click   | Form valid – return to Reviews page with confirmation message | Pass      |
+| Submit button   | Click   | Form invalid – browser error, form not submitted              | Pass      |
+
+**Edit Review page**
+
+| Element          | Action           | Expected Outcome                                                                                                                                    | Pass/Fail |
+|------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Edit Review page | Display          | Display a form autopopulated with the original review                                                                                               | Pass      |
+| Edit Review page | Access           | Logged out – use direct link takes you to login page                                                                                                | Pass      |
+| Edit Review page | Access           | If a logged-in user tries to edit another user’s review by using the direct link, they’re returned to a custom 403 error pageand are refused access | Pass      |
+| Review Title     | Leave blank      | Browser error, form does not submit                                                                                                                 | Pass      |
+| Review Title     | Whitespace       | Browser error, form does not submit                                                                                                                 | Pass      |
+| Review Title     | Valid field      | Form submits, review is updated                                                                                                                     | Pass      |
+| Body field       | Leave blank      | Browser error, form does not submit                                                                                                                 | Pass      |
+| Body field       | Whitespace       | Browser error, form does not submit                                                                                                                 | Pass      |
+| Body field       | Valid field      | Form submits, review is updated                                                                                                                     | Pass      |
+| Rating field     | Valid field      | Form submits, review is updated                                                                                                                     | Pass      |
+| Image field      | Upload new image | Form submits, review is updated                                                                                                                     | Pass      |
+
+**Edit Review modal**
+
+## Bugs
+
+### Checkout page
+
+When testing the checkout page, I found that adding whitespace to the text fields resulted in a 500 server error message, although the order was still being submitted and the Stripe payment was being processed. To prevent this from happening, I added a custom pattern attribute widget to the checkout form, which uses the information in the Code Institute Boutique Ado walkthrough project as a starting point. I used [this](https://www.geeksforgeeks.org/html-pattern-attribute) article as a reference point for learning about HTML pattern attributes, and [this](https://stackoverflow.com/questions/19122886/how-can-i-create-a-custom-message-when-an-html5-required-input-pattern-does-not) Stack Overflow thread for help with writing a custom JavaScript funtion, which I added to the Checkout template as a post-load so as to return a relevant and helpful error message to the user.
+
+It would obviously be better to find a way to fully validate the form on the server side before submitting the form. however due to time constraints I have not been able to research and implement this. This will be looked at in the future.
 

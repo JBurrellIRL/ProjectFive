@@ -164,7 +164,8 @@
             this.setCustomValidity("");
         };
         $("input[name=phone_number]")[0].oninvalid = function () {
-            this.setCustomValidity("Phone number must be between 8 and 15 characters.");
+            this.setCustomValidity(
+                "Phone number must be between 8 and 15 characters, and must not contain spaces.");
         };
         $("input[name=phone_number]")[0].oninput = function () {
             this.setCustomValidity("");
