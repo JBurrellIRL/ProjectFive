@@ -399,7 +399,9 @@ I included a Reviews section in the site, which a user can reach through the lin
 
 ### Social Media Marketing
 
-A Facebook business page has been created for organic social media marketing. The branding on the social media page matches the branding on the website, and the page can be used to share new content from the site so that people following the business through Facebook can be kept up-to-date on the current content for sale.
+A Facebook business page has been created for organic social media marketing. The branding on the social media page is similar to the branding on the website, and the page can be used to share new content from the site so that people following the business through Facebook can be kept up-to-date on the current content for sale. It also includes a "Shop Now" button to make it easy for visitors to reach the store itself.
+
+![facebook](docs/readme_images/facebook.png)
 
 ### Email Newsletter Marketing
 
@@ -407,7 +409,7 @@ Site visitors can sign up to a newsletter when visiting the site. Registering fo
 
 ## Testing
 
-A dedicated testing document can be found [here](test-doc).
+A dedicated testing document can be found [here](https://github.com/JBurrellIRL/ProjectFive/blob/main/TESTING.md).
 
 # Deployment - Heroku
 
@@ -673,3 +675,7 @@ To clone this repository follow the below steps:
 - [Stack Overflow](https://stackoverflow.com/)
 - [Discogs](https://discogs.com) - A selection of the album information text for this site plus images were sourced from Discogs. JB's Record Store is not a live site, is for educational purposes only and no copyright infringement whatsoever is intended.
 - [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+
+## Acknowledgement
+
+Thanks to my mentor, Jack Wachira, for his truly helpful feedback and advice. 

@@ -1,0 +1,250 @@
+"<?xml version=""1.0"" encoding=""UTF-8""?>"
+<urlset
+"      xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"""
+"      xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"""
+"      xsi:schemaLocation=""http://www.sitemaps.org/schemas/sitemap/0.9"
+"            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"">"
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?format=lp</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?format=compact_disc</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?format=cassette</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=alternative_rock</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=classic_rock</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=electronic</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=folk_rock</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=grunge</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=metal</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=post_rock</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?genre=progressive_rock</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/contact/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/faqs/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/bag/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/terms/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/privacy-policy/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/reviews/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/8/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/16/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/22/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/17/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/10/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/3/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/12/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/4/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?page=2</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/5/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/18/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/13/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/1/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/7/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/11/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/15/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/2/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/9/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/14/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/21/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/19/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/23/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/24/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/6/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?page=1</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jbs-record-store.herokuapp.com/products/?page=3</loc>
+  <lastmod>2022-12-06T15:42:14+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>
