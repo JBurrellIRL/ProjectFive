@@ -339,12 +339,67 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Add product link   | Click   | Opens Add Product page                             | Pass      |
 | Logout             | Click   | Opens logout page                                  | Pass      |
 
+### Footer
+
+| Element               | Action  | Expected Outcome                                     | Pass/Fail |
+|-----------------------|---------|------------------------------------------------------|-----------|
+| Footer                | Display | Show footer navigation, social links and site credit | Pass      |
+| Home link             | Click   | Open homepage                                        | Pass      |
+| T&C Link              | Click   | Open T&C Page                                        | Pass      |
+| Privacy Link          | Click   | Open Privacy page                                    | Pass      |
+| FAQs Link             | Click   | Open FAQs page                                       | Pass      |
+| Customer Reviews link | Click   | Open Customer Reviews page                           | Pass      |
+| Contact Us link       | Click   | Open Contact page                                    | Pass      |
+| Social Media links    | Click   | Open correct social profile in new tab               | Pass      |
+| Personal credit link  | Click   | Open my personal website link                        | Pass      |
+
 ### Home Page
 
 | Element          | Action   | Expected Result                            | Pass/Fail |
 |------------------|----------|--------------------------------------------|-----------|
 | Shop Now button  | Click    | Open Store page                            | Pass      |
 | Newsletter Block | Interact | Accept email address and show confirmation | Pass      |
+
+### Allauth pages
+
+| Element                     | Action                                 | Expected Outcome                                | Pass/Fail |
+|-----------------------------|----------------------------------------|-------------------------------------------------|-----------|
+| Signup page                 |                                        |                                                 |           |
+| Sign In Link                | Click                                  | Open login page                                 | Pass      |
+| Password Reset link         | Click                                  | Open password reset page                        | Pass      |
+| Email field                 | Insert non-email address               | On submit – submit fail, error message displays | Pass      |
+| Email field                 | Leave empty                            | On submit – submit fail, error message displays | Pass      |
+| Email field                 | Insert duplicate email address         | On submit – submit fail, error message displays | Pass      |
+| Email field                 | Insert valid input                     | On submit – form submits                        | Pass      |
+| Email confirmation field    | Insert different email address         | On submit – submit fail, error message displays | Pass      |
+| Email confirmation field    | Insert valid input                     | On submit – form submits                        | Pass      |
+| Username field              | Insert invalid/empty input             | On submit – submit fail, error message displays | Pass      |
+| Username field              | Insert duplicate username              | On submit – submit fail, error message displays | Pass      |
+| Username field              | Insert valid input                     | On submit – form submits                        | Pass      |
+| Password fields             | Insert invalid/empty input             | On submit – submit fail, error message displays | Pass      |
+| Password fields             | Passwords don’t match                  | On submit – submit fail, error message displays | Pass      |
+| Password fields             | Insert valid input and passwords match | On submit – form submits                        | Pass      |
+| Sign Up button (form valid) | Click                                  | Form submits                                    | Pass      |
+| Sign Up button (form valid) | Click                                  | Redirect to email verification page             | Pass      |
+| Sign Up button (form valid) | Click                                  | Alert message to say verification email sent    | Pass      |
+| Back to Login button        | Click                                  | Open login page                                 | Pass      |
+|                             |                                        |                                                 |           |
+| Login page                  |                                        |                                                 |           |
+| Sign up link                | Click                                  | Open signup page                                | Pass      |
+| Username/email field        | Leave empty                            | On submit – submit fail, error message displays | Pass      |
+| Username/email field        | Invalid input                          | On submit – submit fail, error message displays | Pass      |
+| Password field              | Leave empty                            | On submit – submit fail, error message displays | Pass      |
+| Password field              | Insert wrong password                  | On submit – submit fail, error message displays | Pass      |
+| Login button (Form valid)   | Click                                  | Form submits                                    | Pass      |
+| Login button (Form valid)   | Click                                  | Redirect to homepage                            | Pass      |
+| Login button (Form valid)   | Click                                  | Success message appears                         | Pass      |
+| Sign Up link                | Click                                  | Open signup page                                | Pass      |
+| Forgot password link        | Click                                  | Open password reset page                        | Pass      |
+| Home link                   | Click                                  | Open homepage                                   | Pass      |
+|                             |                                        |                                                 |           |
+| Sign Out confirmation page  |                                        |                                                 |           |
+| Sign Out button             | Click                                  | User is successfully logged out                 | Pass      |
+| Sign Out button             | Click                                  | Success message confirming logout appears       | Pass      |
 
 ### Store Page
 
@@ -482,15 +537,56 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Delete button       | Click   | Delete review and return to Reviews page                       | Pass      |
 | Close button        | Click   | Close the modal without deleting any reviews from the database | Pass      |
 
-### Profiles
+### Profile Pages
 
+| Element                | Action               | Expected Outcome                                                                                                  | Pass/Fail |
+|------------------------|----------------------|-------------------------------------------------------------------------------------------------------------------|-----------|
+| Profile Page           |                      |                                                                                                                   |           |
+| Profile page           | Display              | Show the user’s stored shipping address, change password button and order history                                 | Pass      |
+| Open profile page      | Access               | If a user tries to access the profile URL directly without being signed in, they are returned to the login screen | Pass      |
+| Form fields            | Page load            | Fields load with user’s saved personal and shipping details                                                       | Pass      |
+| Input fields           | Leave blank          | Submit – form submits                                                                                             | Pass      |
+| Input fields           | Whitespace           | Submit – form submits                                                                                             | Pass      |
+| Input fields           | Update with new info | Submit – form submits                                                                                             | Pass      |
+| Form dropdown          | Click                | Dropdown options are displayed                                                                                    | Pass      |
+| Update button          | Click                | Form submits                                                                                                      | Pass      |
+| Update button          | Click                | Success message is issued                                                                                         | Pass      |
+| Previous order number  | Click                | Open previous order                                                                                               | Pass      |
+| Previous order number  | Click                | Display message notifying that this is a previous order, not a new order                                          | Pass      |
+|                        |                      |                                                                                                                   |           |
+| Previous order page    |                      |                                                                                                                   |           |
+| Page content           | Display              | Display details of previous order, order date, and message informing that its a previous order                    | Pass      |
+| Back to Profile button | Click                | Return to user profile page                                                                                       | Pass      |
 
+### Contact page
+
+| Element       | Action                  | Expected Outcome                                             | Pass/Fail |
+|---------------|-------------------------|--------------------------------------------------------------|-----------|
+| Page display  | Display                 | Show contact form with fields to submit message              | Pass      |
+| Text field    | Input whitespace        | Browser error, form won’t submit                             | Pass      |
+| Text field    | Leave blank             | Browser error, form won’t submit                             | Pass      |
+| Email field   | Enter non email address | Browser error, form won’t submit                             | Pass      |
+| Submit button | Click                   | If form valid, submits form                                  | Pass      |
+| Submit button | Click                   | If form invalid, returns error and redirects to Contact page | Pass      |
 
 ## Bugs
 
-### Checkout page
+### Resolved bugs
+
+**Checkout page**
 
 When testing the checkout page, I found that adding whitespace to the text fields resulted in a 500 server error message, although the order was still being submitted and the Stripe payment was being processed. To prevent this from happening, I added a custom pattern attribute widget to the checkout form, which uses the information in the Code Institute Boutique Ado walkthrough project as a starting point. I used [this](https://www.geeksforgeeks.org/html-pattern-attribute) article as a reference point for learning about HTML pattern attributes, and [this](https://stackoverflow.com/questions/19122886/how-can-i-create-a-custom-message-when-an-html5-required-input-pattern-does-not) Stack Overflow thread for help with writing a custom JavaScript funtion, which I added to the Checkout template as a post-load so as to return a relevant and helpful error message to the user.
 
 It would obviously be better to find a way to fully validate the form on the server side before submitting the form. however due to time constraints I have not been able to research and implement this. This will be looked at in the future.
 
+**Heroku deployment**
+
+On my initial deploys to Heroku, my deployments failed due to the error "Could not build wheels for backports.zoneinfo". I discovered that Heroku uses Python version 3.10 by default, which is not compatible with backports.zoneinfo - to resolve this, I created a custom runtime.txt file in my root directory to specify the version of Python for Heroku to install. I also had to downgrade to Heroku-20 to use this version of Python, as Heroku-22 does not support Python version 3.8.15. The Heroku downgrade and the runtime.txt addition solved the deployment issues, and I was able to deploy my site successfully.
+
+### Unresolved bugs
+
+**Add/Edit Product pages**
+
+The Summernote widget embedded into these pages for text formatting options is not fully mobile responsive. Therefore, we suggest adding/editing products from a widescreen/desktop browser when possible. As this is an embedded Django package, it's not fully within my control in terms of mobile responsiveness. It is a low impact bug, as it would only affect the store administrator adding/editing products on a mobile device.
+
+No other unresolved bugs have been detected during my testing process. The site works as I intend it to.
