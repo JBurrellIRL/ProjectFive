@@ -27,7 +27,9 @@ def contact_view(request):
             contact_form.save()
 
         else:
-            messages.error(request, "Error saving form")
+            messages.error(
+                request, "Error saving form. Please check your submission.")
+            return redirect("contact")
 
         return redirect("success")
 

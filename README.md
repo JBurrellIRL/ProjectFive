@@ -671,5 +671,5 @@ To clone this repository follow the below steps:
 - [Django Docs](https://docs.djangoproject.com/en/3.2/)
 - [Bootstrap 5.0 Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 - [Stack Overflow](https://stackoverflow.com/)
-- [Discogs](https://discogs.com) - A selection of the album information text for this site plus images were sourced from Discogs. This site is for educational purposes only and no copyright infringement whatsoever is intended.
+- [Discogs](https://discogs.com) - A selection of the album information text for this site plus images were sourced from Discogs. JB's Record Store is not a live site, is for educational purposes only and no copyright infringement whatsoever is intended.
 - [Code Institute - Boutique Ado Walkthrough Project](https://github.com/Code-Institute-Solutions/boutique_ado_v1)

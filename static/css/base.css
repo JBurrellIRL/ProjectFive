@@ -36,6 +36,7 @@ div.logo-box {
 
 .navbar a:hover {
     color: #ebe9e4 !important;
+    background-color: #e31f25;
 }
 
 .dropdown-menu li {

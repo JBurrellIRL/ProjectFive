@@ -352,14 +352,14 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 |--------------------|---------|-----------------------------------------------------------------|-----------|
 | Product            | Display | Display thumbnail image, title, artist, format, genre and price | Pass      |
 | Product            | Display | Display products in a random order on page load                 | Pass      |
-| Thumbnail          | Click   | z                                                               | Pass      |
+| Thumbnail          | Click   | Open product detail page                                        | Pass      |
 | Product Title      | Click   | Open product detail page                                        | Pass      |
 | Add To Cart        | Click   | Adds item to cart                                               | Pass      |
 | Add to Cart        | Click   | Updates running total in cart icon in header                    | Pass      |
 | Edit button        | Display | Should only be visible to store admin                           | Pass      |
 | Delete button      | Display | Should only be visible to store admin                           | Pass      |
 | Edit button        | Click   | Opens Edit Product page                                         | Pass      |
-| Delete button      | Click   | Opens Delete Product page                                       | Pass      |
+| Delete button      | Click   | Opens Delete Product modal                                      | Pass      |
 | Page pagination    | Display | Page should only show 8 products at once                        | Pass      |
 | Pagination buttons | Click   | Takes user back and forth between sub-pages                     | Pass      |
 
@@ -371,7 +371,7 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Edit button              | Display | Should only be visible to store admin                                           | Pass      |
 | Delete button            | Display | Should only be visible to store admin                                           | Pass      |
 | Edit button              | Click   | Opens Edit Product page                                                         | Pass      |
-| Delete button            | Click   | Opens Delete Product page                                                       | Pass      |
+| Delete button            | Click   | Opens Delete Product modal                                                      | Pass      |
 | Add To Cart              | Click   | Adds item to cart                                                               | Pass      |
 | Add to Cart              | Click   | Updates running total in cart icon in header                                    | Pass      |
 | Continue Shopping button | Click   | Opens all products page                                                         | Pass      |
@@ -474,7 +474,17 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Rating field     | Valid field      | Form submits, review is updated                                                                                                                     | Pass      |
 | Image field      | Upload new image | Form submits, review is updated                                                                                                                     | Pass      |
 
-**Edit Review modal**
+**Delete Review modal**
+
+| Element             | Action  | Expected Outcome                                               | Pass/Fail |
+|---------------------|---------|----------------------------------------------------------------|-----------|
+| Delete review modal | Display | Display button to delete review and also to close the modal    | Pass      |
+| Delete button       | Click   | Delete review and return to Reviews page                       | Pass      |
+| Close button        | Click   | Close the modal without deleting any reviews from the database | Pass      |
+
+### Profiles
+
+
 
 ## Bugs
 
