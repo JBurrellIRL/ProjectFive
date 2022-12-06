@@ -276,6 +276,10 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 | Password Reset   | 96          | 98            | 100            | 100 |
 | Change Password  | 96          | 98            | 100            | 100 |
 
+## Browser testing
+
+The site was continually tested in Google Chrome, Brave and Mozilla Firefox during development, to ensure functionality across browsers. No issues were detected.
+
 ## Manual Testing
 
 ### Site Navigation
@@ -583,10 +587,4 @@ It would obviously be better to find a way to fully validate the form on the ser
 
 On my initial deploys to Heroku, my deployments failed due to the error "Could not build wheels for backports.zoneinfo". I discovered that Heroku uses Python version 3.10 by default, which is not compatible with backports.zoneinfo - to resolve this, I created a custom runtime.txt file in my root directory to specify the version of Python for Heroku to install. I also had to downgrade to Heroku-20 to use this version of Python, as Heroku-22 does not support Python version 3.8.15. The Heroku downgrade and the runtime.txt addition solved the deployment issues, and I was able to deploy my site successfully.
 
-### Unresolved bugs
-
-**Add/Edit Product pages**
-
-The Summernote widget embedded into these pages for text formatting options is not fully mobile responsive. Therefore, we suggest adding/editing products from a widescreen/desktop browser when possible. As this is an embedded Django package, it's not fully within my control in terms of mobile responsiveness. It is a low impact bug, as it would only affect the store administrator adding/editing products on a mobile device.
-
-No other unresolved bugs have been detected during my testing process. The site works as I intend it to.
+No unresolved bugs have been detected during my testing process. The site works as I intend it to.
