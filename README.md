@@ -2,11 +2,13 @@
 
 JB's Record Store is a small-scale B2C e-commerce store selling physical music albums on LP, CD and Cassette. The site is targeted towards users who are interested in music and building their physical music collection, an industry that's experienced a major revival over the past number of years. 
 
-Users can browse and purchase a range of music based on their interests. They can browse the store by either format (CD, LP or Cassete) or by musical genre - options for both are available from the main site navigation. They can also read reviews left by other users of the site, and can reach out to the site administrator if needed, either through the site Contact form or else via the store's social media accounts.
+Users can browse and purchase a range of music based on their interests. They can browse the store by either format (CD, LP or Cassete) or by musical genre - options for both are available from the main site navigation. They can also read reviews left by other users of the site, and can reach out to the site administrator if needed, either through the site Contact form or else via the store's social media accounts. 
 
 The store uses Stripe to handle payments. As this site was built for educational purposes, please do not enter any live card details into the checkout page. For testing purposes, Stripe's test card details can be used - you can find a link to these details in Stripe's documentation [here](https://stripe.com/docs/testing#cards).
 
 The live link can be found here - [JB's Record Store](https://jbs-record-store.herokuapp.com/)
+
+![Responsive](docs/readme_images/ami-responsive.png)
 
 ## User Stories
 
@@ -47,9 +49,13 @@ The live link can be found here - [JB's Record Store](https://jbs-record-store.h
 
 #### User Stories not yet implemented
 
-The following user story was scoped out of the project at this stage, due to time constraints. It was marked as "Won't-have" within the project board in GitHub Projects. This functionality will be returned to at a later date.
+The following user story was scoped out of the project at this stage, due to time constraints. It was marked as "Won't-have" within the project board in GitHub Projects, and is added under the "Future Features" heading. This functionality will be returned to at a later date.
 
 - As a site administrator I can avail of automated stock management within the site so that the stock levels of items in the store can decrease automatically once a customer places an order, and I can be notified through email that stock levels of products are running low.
+
+Due to the small size of the store, a search feature user story has also not been added at this time. If the store grows to include more products over time, this will be added to the site header:
+
+- As a site user I can search the site for content so that I can find whether or not the store has an item that I'm looking for.
 
 ## Site Design
 
