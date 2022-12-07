@@ -100,7 +100,7 @@ SUMMERNOTE_CONFIG = {
     'summernote': {
         'width': '100%',
         'height': '480',
-}
+    }
 }
 
 AUTHENTICATION_BACKENDS = [
