@@ -115,6 +115,8 @@ During development, SQLite was used for the site database and for production, El
 - For Django function-based views, the login_required decorator is used to restrict access as required.
 - I created custom 404 and 403 error pages, to inform the user of the applicable error. These pages also include buttons to return the user to the site homepage.
 
+![404-error](docs/readme_images/404-error.png)
+
 ## Site Features
 
 ### Header
@@ -133,15 +135,15 @@ During development, SQLite was used for the site database and for production, El
 
 ![header](docs/readme_images/nav-logged-out.png)
 
-- If the visitor has logged in or registered, the options to register or log in are replaced by a user icon (from Font Awesome) and their username, to show them that they are logged in under that username. Clicking on the username opens a dropdown menu, where the user has an option to go to their profile, add a new product (if logged in as the superuser) or to Logout.
+- If the visitor has logged in, the options to register and log in are replaced by a user icon (from Font Awesome) and their username, to show them that they are logged in under that username. Clicking on the username opens a dropdown menu, where the user has an option to go to their profile, add a new product (if logged in as the superuser) or to Logout.
 
 ![header](docs/readme_images/nav-logged-in.png)
 
-- The navigation bar also includes a shopping bag, which can be clicked on to reach the shopping bag page. Beside this is a field that shows the running total of the contents of the shopper's bag. This updates dynamically as the shopper adds items to their bag:
+- The navigation bar also includes a shopping bag, which can be clicked on to reach the shopping bag page. Beside this is a field that shows the running total of the contents of the shopper's bag. This updates dynamically as the shopper adds items to their bag.
 
 ![header](docs/readme_images/shopping-bag.png)
 
-- The navigation bar uses Bootstrap classes and is fully responsive to screens of different sizes. It switches to a "hamburger" menu at 992px:
+- The navigation bar uses Bootstrap classes and is fully responsive to screens of different sizes. It switches to a "hamburger" menu at 992px.
 
 ![header](docs/readme_images/hamburger.png)
 
@@ -153,7 +155,7 @@ During development, SQLite was used for the site database and for production, El
 
 ![footer](docs/readme_images/footer.png)
 
-- The site footer includes links to Terms/Conditions, Privacy Policy. Customer Reviews and other important pages within the site.
+- The site footer navigation includes links to Terms & Conditions, Privacy Policy. Customer Reviews and other important pages within the site.
 - There's also links to Facebook, Twitter and Instagram along with a link to my personal Discogs record collection catalogue. 
 - The external links are coded to open in a new browser tab, so that the visitor is not taken away from the website. The internal links open in the same tab.
 - There's also a reference to me as the site designer, along with a link to my personal website.
@@ -222,9 +224,9 @@ During development, SQLite was used for the site database and for production, El
 ![store](docs/readme_images/store-landing.png)
 
 - The user can reach the products page by either clicking on the "Shop Now" button on the homepage, or via the site navigation. The user has an option to browse by either music genre or physical format from the site navigation. In both the Genre and Format dropdown menus, the user sees an option to browse either by "All Products", which returns all products (paginated to 8 products per page) or by the category filter that they choose.
-- The landing page is fully responsive, and changes the number of products per row based on the width of the user's browser window.
+- The landing page is responsive, and changes the number of products per row based on the width of the user's browser window.
 - The user will see a product thumbnail image, artist, format, genre, price and an excerpt description.
-- The user has an option to add an item to their shopping cart on the landing page. 
+- The user has an option to add an item to their shopping cart on the Store landing page. 
 - If the user is logged in as a store administrator, they'll also see buttons for Editing and Deleting products under the Add to Cart button.
 
 **Product Detail Page**
@@ -241,11 +243,11 @@ During development, SQLite was used for the site database and for production, El
 
 ![store-management](docs/readme_images/add-product.png)
 
-- A product can be added to the store by a superuser by clicking on the "Add Product" option in the navigation bar user dropdown menu. This option is only visible to superusers.
+- A product can be added to the store by a superuser by clicking on the "Add Product" option in the navigation bar user dropdown menu, or via the site back-end. The option in the navigation bar is only visible to superusers.
 - If a user that isn't logged in tries to add a product by using the direct URL to the Add Product page, they'll be redirected to the Sign In page.
 - If a user then logs into a non-superuser account, they'll receive a message to say that only store administrators can add products, and be redirected to the homepage.
 - The user must fill out the fields marked with asterisks. Otherwise, the user won't be allowed to submit the new product and the browser will activate the next compulsory field.
-- The 'description' field is the Summernote WYSIWYG editor, added as an extra Django package. It renders in both the back-end and front-end.
+- The 'description' field is the Summernote WYSIWYG editor, added as an extra Django package. It renders in both the back-end and front-end. It's responsive and can be used on mobile and desktop devices.
 - The SKU field requires a unique value. If a previously-used SKU is entered into this field, the user receives an error to say that this SKU has already been used. 
 - The user can upload an image to the product. If they do not, a default image is used. 
 - The user will only be able to submit the form if the form does not return any errors. If there's no errors found, they'll receive a success message after submitting the form.
@@ -266,7 +268,7 @@ During development, SQLite was used for the site database and for production, El
 
 ![store-management](docs/readme_images/delete-product.png)
 
-- A superuser has the option to delete products through the site back-end, and also through the front-end on both the Store page and also the Product Detail page.
+- A superuser has the option to delete products through the site back-end, and also through the front-end on both the Store page and the Product Detail page.
 - Clicking on the "Delete" button opens a Bootstrap modal, asking the user if they want to confirm deletion of the product.
 - Clicking "Delete" returns a "Product Deleted" message and the product is removed from the database.
 
