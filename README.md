@@ -256,9 +256,9 @@ During development, SQLite was used for the site database and for production, El
 
 ![store-management](docs/readme_images/edit-product.png)
 
-- A superuser can choose to edit a product through the front-end on both the main Store page and also the product detail page. 
+- A superuser can choose to edit a product through the front-end on both the main Store page and also the Product Detail page. 
 - If a non-superuser tries to edit the product using the direct editing URL, they're redirected to the login page.
-- If the user then logs in as a regular user, they receive an error stating that "only store administrators can do that", and are redirected to the homepage.
+- If the user then logs in as a regular user, they receive an error stating that "only store administrators can modify products", and are redirected to the homepage.
 - The form opens with the original content rendered.
 - The 'description" field is the Summernote WYSIWYG field, as with the Add Product form.
 - The image field displays a thumbnail of the existing image, and a checkbox option exists to allow the superuser to clear the existing image. 
