@@ -10,6 +10,25 @@ The live link can be found here - [JB's Record Store](https://jbs-record-store.h
 
 ![Responsive](docs/readme_images/ami-responsive.png)
 
+## Table of Contents
+
+- [User Stories](#user-stories)
+- [Site Design](#site-design)
+- [Agile Methodology](#agile-methodology)
+- [Database Schema](#database-schema)
+- [Security](#security)
+- [Site Features](#site-features)
+- [Business Model](#business-model)
+- [Marketing](#marketing)
+- [Deployment to Heroku](#deployment-to-heroku)
+- [AWS Set Up](#aws-set-up)
+- [Forking this repository](#forking-this-repository)
+- [Cloning this repository](#cloning-this-repository)
+- [Languages](#languages)
+- [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used-during-site-development)
+- [Credits](#credits)
+- [Acknowledgments](#acknowledgments)
+
 ## User Stories
 
 #### EPIC: Site Content & Navigation
@@ -419,7 +438,7 @@ Site visitors can sign up to a newsletter when visiting the site. Registering fo
 
 A dedicated testing document can be found [here](https://github.com/JBurrellIRL/ProjectFive/blob/main/TESTING.md).
 
-# Deployment - Heroku
+## Deployment to Heroku
 
 This app was deployed to Heroku using the following steps:
 
@@ -685,4 +704,4 @@ To clone this repository follow the below steps:
 
 ## Acknowledgement
 
-Thanks to my mentor, Jack Wachira, for his truly helpful feedback and advice. 
+Thanks to my mentor, Jack Wachira, for his truly invaluable feedback and advice. 
