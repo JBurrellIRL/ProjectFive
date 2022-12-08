@@ -6,7 +6,7 @@
 
 - *As a site admin I can create, update and delete products within the store so that I can manage the items currently for sale.*
 
-The site administrator has full access to CRUD functionality for all products, both from within the site front-end and also within the site admin panel. 
+The site administrator has full access to CRUD functionality for all products, both from within the site front-end (when logged in as the superuser) and also within the site admin panel. 
 
 When logged in, the site administrator can add products through an "Add Product" option that appears in the user drop-down menu:
 
@@ -243,7 +243,9 @@ No errors were returned when passing my CSS through the [W3C CSS Validator](http
 
 ### Python
 
-I used the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided by Code Institute for my Python testing. No errors were returned, apart from some line-length errors in my settings.py file, where are auto-generated.
+I used the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided by Code Institute for my Python testing. No errors were returned, apart from some line-length errors in my settings.py file, where are auto-generated and can be disregarded.
+
+![Validation - python](docs/testing_images/python-linter.png)
 
 ### JavaScript
 
@@ -278,7 +280,7 @@ The Lighthouse test in Chrome Developer Tools was run on all pages to check perf
 
 ## Browser testing
 
-The site was continually tested in Google Chrome, Brave and Mozilla Firefox during development, to ensure functionality across browsers. No issues were detected.
+The site was continually tested in Google Chrome, Brave and Mozilla Firefox during development, to ensure functionality across browsers.
 
 ## Manual Testing
 
@@ -579,7 +581,7 @@ The site was continually tested in Google Chrome, Brave and Mozilla Firefox duri
 
 **Checkout page**
 
-When testing the checkout page, I found that adding whitespace to the text fields resulted in a 500 server error message, although the order was still being submitted and the Stripe payment was being processed. To prevent this from happening, I added a custom pattern attribute widget to the checkout form, which uses the information in the Code Institute Boutique Ado walkthrough project as a starting point. I used [this](https://www.geeksforgeeks.org/html-pattern-attribute) article as a reference point for learning about HTML pattern attributes, and [this](https://stackoverflow.com/questions/19122886/how-can-i-create-a-custom-message-when-an-html5-required-input-pattern-does-not) Stack Overflow thread for help with writing a custom JavaScript funtion, which I added to the Checkout template as a post-load so as to return a relevant and helpful error message to the user.
+When testing the checkout page, I found that adding whitespace to the text fields resulted in a 500 server error message, although the order was still being submitted and the Stripe payment was being processed. To prevent this from happening, I added a custom pattern attribute widget to the checkout form, which uses the information in the Code Institute Boutique Ado walkthrough project as a starting point. I used [this](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern) article as a reference point for learning about HTML pattern attributes, and [this](https://stackoverflow.com/questions/19122886/how-can-i-create-a-custom-message-when-an-html5-required-input-pattern-does-not) Stack Overflow thread for help with writing a custom JavaScript funtion, which I added to the Checkout template as a post-load so as to return a relevant and helpful error message to the user.
 
 It would obviously be better to find a way to fully validate the form on the server side before submitting the form. however due to time constraints I have not been able to research and implement this. This will be looked at in the future.
 
