@@ -56,8 +56,6 @@ div.logo-box {
     padding-right: 5px;
 }
 
-/* Fonts  */
-
 p {
     font-family: "Roboto", sans-serif;
     text-align: justify;
@@ -89,26 +87,6 @@ a.btn-success {
     border: solid 1px #6B7177;
 }
 
-.card-title {
-    font-size: 20px;
-    text-align: center;
-    color: #6B7177;
-}
-
-.post-link {
-    text-decoration: none;
-}
-
-.card-meta {
-    text-align: center;
-    color: #6B7177;
-}
-
-.card-text {
-    font-family: 'Roboto', sans-serif;
-    color: #6B7177;
-}
-
 button {
     font-family: 'Roboto', sans-serif;
 }
@@ -125,16 +103,12 @@ button {
     background-color: #e31f25 !important;
 }
 
-#info-box {
-    transition: all .2s ease-in-out;
-}
+/* Homepage card section  */
 
-#info-box:hover {
-    transform: scale(1.10);
-}
-
-/* For titles on cards on Index page */
 .card-title {
+    font-size: 20px;
+    text-align: center;
+    color: #6B7177;
     margin: 10px 0px;
     display: flex;
     flex-direction: column-reverse;
@@ -142,6 +116,28 @@ button {
     justify-content: center;
     font-family: "Oswald", sans-serif;
     font-weight: 500;
+}
+
+.card-meta {
+    text-align: center;
+    color: #6B7177;
+}
+
+.card-text {
+    font-family: 'Roboto', sans-serif;
+    color: #6B7177;
+}
+
+.product-link {
+    text-decoration: none;
+}
+
+#info-box {
+    transition: all .2s ease-in-out;
+}
+
+#info-box:hover {
+    transform: scale(1.10);
 }
 
 i.fa-2x {
@@ -316,7 +312,6 @@ p.sign-out {
     display: block;
     text-align: center;
     color: #212529;
-    /* font-weight: bold; */
 }
 
 .login #id_remember {

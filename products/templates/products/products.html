@@ -27,12 +27,11 @@
                             </a>
                             {% endif %}
                         </div>
-                        <a href="{% url 'product_detail' product.id %}" class="post-link">
+                        <a href="{% url 'product_detail' product.id %}" class="product-link">
                             <h2 class="card-title">{{ product.name }}</h2>
                         </a>
                         <hr>
                         <h5 class="card-meta">Artist: {{ product.artist }} </h5>
-                        <!-- <h5 class="card-meta">Release Year: {{ product.release_year }}</h5> -->
                         {% if product.format.friendly_name == 'LP' %}
                         <h5 class="card-meta"><i class="bi bi-vinyl-fill"></i>
                             {{ product.format.friendly_name }}</h5>
