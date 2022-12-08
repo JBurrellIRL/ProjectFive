@@ -473,11 +473,11 @@ DATABASES = {
 ```
 
 ### Create files / directories
-- Create three directories in the main directory; media, static and templates.
-- Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
+- Create three folders in the main directory; media, static and templates.
+- Create a "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi
 
 ### Update Heroku Config Vars
-Add the following Config Vars in Heroku:
+Add the following Config Vars in the Heroku Settings tab:
 | Variable Name         | Value (Where to find this info)                                                 |
 |-----------------------|---------------------------------------------------------------------------------|
 | AWS_ACCESS_KEY_ID     | AWS CSV                                                                         |
@@ -492,10 +492,10 @@ Add the following Config Vars in Heroku:
 | USE_AWS               | True (When AWS setup is created)                                                |
 
 ### Deploy
-- NB: Ensure in Django settings, DEBUG is False
+- IMPORTANT: Ensure in Django settings, DEBUG is False.
 - Go to the Deploy tab on Heroku and connect to GitHub - make sure you select the correct repository. 
 - Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually.
-- Click View to view the deployed site.
+- Click Open App to view the deployed site.
 
 The site is now live and operational.
 
@@ -503,11 +503,11 @@ The site is now live and operational.
 ### AWS S3 Bucket
 - Create an AWS account [here](https://portal.aws.amazon.com/billing/signup).
 - In the 'Services' tab on the AWS Management Console, search 'S3' and select it.
-- Click 'Create a new bucket', give it a name (it's preferable to match this to your Heroku app name), and choose the region closest to you.
-- Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket owner preferred.
-- Uncheck block all public access and tick to acknowledge that the bucket will be public.
-- Click 'Create bucket'.
-- Open the created bucket, go to the 'Properties' tab. Scroll to the bottom and under 'Static website hosting' click 'edit' and change the Static website hosting option to 'enabled'. Copy the default values for the index and error documents and click 'save changes'.
+- Click 'Create a new bucket', give it a name (it's good to match this to your Heroku app name), and choose the region closest to you.
+- Under 'Object Ownership' select 'ACLs enabled' and leave the Object Ownership as Bucket Owner Preferred.
+- Uncheck Block All Public Access and tick to acknowledge that the bucket will be public.
+- Click 'Create Bucket'.
+- Open the created bucket, go to the 'Properties' tab. Scroll to the bottom and under 'Static website hosting' click 'Edit' and change the Static website hosting option to 'Enabled'. Copy the default values for the index and error documents and click 'Save Changes'.
 - Open the 'Permissions' tab, locate the CORS configuration section and add the following code:
 ```
 [
@@ -534,18 +534,18 @@ The site is now live and operational.
     - ARN: Bucket ARN (copy from S3 Bucket page)
 - Click 'Add Statement'.
 - Click 'Generate Policy'.
-- Copy the policy from the popup that appears
+- Copy the policy from the popup that appears.
 - Paste the generated policy into the Permissions > Bucket Policy area.
 - Add '/*' at the end of the 'Resource' key, and save.
 - Go to the 'Access Control List' section click edit and enable List for Everyone (public access) and accept the warning box.
 
 
 ### IAM
-- From the 'Services' menu, search IAM and select it.
-- Once on the IAM page, click 'User Groups' from the side bar, then click 'Create group'. Choose a name and click 'Create'.
+- From the 'Services' menu, search IAM and select it when it's returned.
+- Once on the IAM page, click 'User Groups' from the side bar, then click 'Create Group'. Choose a name and click 'Create'.
 - Go to 'Policies', click 'Create New Policy'. Go to the 'JSON' tab and click 'Import Managed Policy'. 
 - Search 'S3' and select 'AmazonS3FullAccess'. Click 'Import'.
-- Get the bucket ARN from 'S3 Permissions' as per above.
+- Get the bucket ARN from 'S3 Permissions'  .
 - Delete the '*' from the 'Resource' key and add the following code into the area:
 
 ```
@@ -569,8 +569,8 @@ The site is now live and operational.
 - Go back to your IDE and install 2 more requirements:
     - `pip3 install boto3`
     - `pip3 install django-storages` 
-- Update your requirements.txt file by typing `pip3 freeze --local > requirements.txt` and add storages to your installed apps.
-- Create an if statement in settings.py 
+- Update your requirements.txt file by typing `pip3 freeze --local > requirements.txt` and add Django Storages to your installed apps.
+- Create an if statement in settings.py, and add the following:
 
 ```
 if 'USE_AWS' in os.environ:
@@ -584,8 +584,7 @@ if 'USE_AWS' in os.environ:
 
     - `AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'` so that Django knows where our static files will be coming from in production.
 
-
-- Create a file called custom storages and import both our settings from django.con as well as the s3boto3 storage class from Django Storages. 
+- Create a file called custom_storages.py in your root directory,  and import both our settings from django.conf as well as the s3boto3 storage class from Django Storages. 
 - Create the following classes:
 
 ```
@@ -630,7 +629,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 To clone this repository follow the below steps: 
 
 1. Locate the repository at this link [JB's Record Store](https://github.com/JBurrellIRL/ProjectFive). 
-2. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
+2. Under the **'Code'** heading, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
 3. Open **Terminal**.
 4. In Terminal, change the current working directory to the desired location of the cloned directory.
 5. Type **'git clone'**, and then paste the URL copied from GitHub earlier. 
@@ -670,7 +669,7 @@ To clone this repository follow the below steps:
 - [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used with Django Forms.
 - [Bootstrap 5](https://getbootstrap.com/docs/4.6/getting-started/introduction/): CSS Framework for responsiveness and site styling.
 - [Tables Generator](https://www.tablesgenerator.com/markdown_tables): Used to convert Excel CSV tables to markdown.
-- [Sitemap Generator](www.xml-sitemaps.com): used to create sitemap.xml .
+- [Sitemap Generator](www.xml-sitemaps.com): used to create sitemap.xml file.
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/): Used to create the site's privacy policy.
 - [Terms & Conditions Generator](https://www.termsandconditionsgenerator.com/)): Used to create the site's terms & conditions.
 - [Mailchimp](https://mailchimp.com/?currency=EUR): Used to create the newsletter signup functionality.
