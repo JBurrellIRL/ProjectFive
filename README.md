@@ -27,7 +27,7 @@ The live link can be found here - [JB's Record Store](https://jbs-record-store.h
 - [Languages](#languages)
 - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used-during-site-development)
 - [Credits](#credits)
-- [Acknowledgments](#acknowledgments)
+- [Acknowledgment](#acknowledgment)
 
 ## User Stories
 
