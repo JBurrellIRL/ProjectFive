@@ -1,13 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.urls import reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Reviews
 from .forms import ReviewsForm
-from django.http import HttpResponse
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 

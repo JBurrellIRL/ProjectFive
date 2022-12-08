@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Contact
 from .forms import ContactForm
 from django.contrib import messages
+from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 
 

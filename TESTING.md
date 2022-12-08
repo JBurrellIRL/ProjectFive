@@ -1,5 +1,14 @@
 # Testing Document
 
+## Table of Contents
+
+- [User Story Testing](#user-story-testing)
+- [Code Validation](#code-validation)
+- [Lighthouse Testing](#lighthouse-testing)
+- [Manual Testing](#manual-testing)
+- [Bugs](#bugs)
+
+
 ## User Story Testing
 
 ### EPIC 1 - Store Management & Administration
