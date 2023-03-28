@@ -70,6 +70,7 @@
                                 data-bs-target="#delete-product{{ product.id }}" aria-label="Delete">Delete</button>
                         </div>
                         {% endif %}
+                        {% if request.user.is_superuser %}
                         <!-- Bootstrap modal for deleting product  -->
                         <div class="modal fade" id="delete-product{{ product.id }}" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
@@ -89,6 +90,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
 
 
 
